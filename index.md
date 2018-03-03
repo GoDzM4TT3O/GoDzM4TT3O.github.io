@@ -1,9 +1,7 @@
-## Welcome to GitHub Pages
+## Welcome to GoDzM4TT3O's website
 
-You can use the [editor on GitHub](https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
+This site is created with the help of Github pages. Learn more [here](https://pages.github.com)
+Ignore any of the below. It's the default config.
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
