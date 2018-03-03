@@ -1,6 +1,6 @@
 ## Welcome to GoDzM4TT3O's website
 
-This site is created with the help of Github pages. Learn more [here.](https://pages.github.com)
+This site is created with the help of Github pages. Learn more [here](https://pages.github.com).
 
 Ignore any of the below. It's the default config.
 ### Markdown
