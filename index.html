@@ -22,119 +22,12 @@
             <ul>
                 <li><a target="_blank" href="https://twitter.com/ItzGoDzM4TT3O" class="icon fa-twitter fa-3x twitter">GoDzM4TT3O on Twitter</a></li>
                 <li><a target="_blank" href="https://bit.ly/M4TT3OYT" class="icon fa-youtube-play fa-3x youtube">GoDzM4TT3O on YouTube</a></li>
-            <li><a href="calc.html" class="calculator">Calculator</a></li>
+            <li><a href="https://godzm4tt3o.github.io/calculator.html" class="fullcalculator">Calculator</a></li>
     </ul>
         </div>
     <img src="https://bit.ly/GoDzPhoto"></img>
 <!-- Container element -->
 <div class="parallax"></div>
-    <div id="fullcalculator" class="fullcalc">
-        <input name="btnTwo" type="Button" value="  2  " onclick="NumPressed(2)">
-</TD>
-<TD>
-<input name="btnThree" type="Button" value="  3  " onclick="NumPressed(3)">
-</TD>
-<TD>
-</TD>
-<TD align=middle><input name="btnMultiply" type="Button" value="  *  " onclick="Operation('*')">
-</TD>
-<TD align=middle><input name="btnDivide" type="Button" value="   /   " onclick="Operation('/')">
-</TD>
-</TR>
-<TR>
-<TD>
-<input name="btnZero" type="Button" value="  0  " onclick="NumPressed(0)">
-</TD>
-<TD>
-<input name="btnDecimal" type="Button" value="   .  " onclick="Decimal()">
-</TD>
-<TD colspan=3>
-</TD>
-<TD>
-<input name="btnEquals" type="Button" value="  =  " onclick="Operation('=')">
-</TD>
-</TR>
-</TABLE>
-</TABLE>
-</B>
-</FORM>
-</CENTER>
-<font face="Verdana, Arial, Helvetica" size=2>
-<SCRIPT>
- var FKeyPad = document.Keypad;
-var Accumulate = 0;
-var FlagNewNum = false;
-var PendingOp = "";
-function NumPressed (Num) {
-if (FlagNewNum) {
-FKeyPad.ReadOut.value  = Num;
-FlagNewNum = false;
-   }
-else {
-if (FKeyPad.ReadOut.value == "0")
-FKeyPad.ReadOut.value = Num;
-else
-FKeyPad.ReadOut.value += Num;
-   }
-}
-function Operation (Op) {
-var Readout = FKeyPad.ReadOut.value;
-if (FlagNewNum && PendingOp != "=");
-else
-{
-FlagNewNum = true;
-if ( '+' == PendingOp )
-Accumulate += parseFloat(Readout);
-else if ( '-' == PendingOp )
-Accumulate -= parseFloat(Readout);
-else if ( '/' == PendingOp )
-Accumulate /= parseFloat(Readout);
-else if ( '*' == PendingOp )
-Accumulate *= parseFloat(Readout);
-else
-Accumulate = parseFloat(Readout);
-FKeyPad.ReadOut.value = Accumulate;
-PendingOp = Op;
-   }
-}
-function Decimal () {
-var curReadOut = FKeyPad.ReadOut.value;
-if (FlagNewNum) {
-curReadOut = "0.";
-FlagNewNum = false;
-   }
-else
-{
-if (curReadOut.indexOf(".") == -1)
-curReadOut += ".";
-   }
-FKeyPad.ReadOut.value = curReadOut;
-}
-function ClearEntry () {
-FKeyPad.ReadOut.value = "0";
-FlagNewNum = true;
-}
-function Clear () {
-Accumulate = 0;
-PendingOp = "";
-ClearEntry();
-}
-function Neg () {
-FKeyPad.ReadOut.value = parseFloat(FKeyPad.ReadOut.value) * -1;
-}
-function Percent () {
-FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(Accumulate);
-}
-// End -->
-</SCRIPT>
-   <style>
-      th {
-    background-color: #4CAF50;
-    color: white;
-}
-      tr:nth-child(even) {background-color: #f2f2f2;}
-   </style>
-          </div>
     </body>
 </head>
 </html>
