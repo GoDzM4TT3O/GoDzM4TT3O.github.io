@@ -7,7 +7,11 @@
       href="http://bit.ly/GoDzPhoto">
     <meta charset="UTF-8">
         <link rel="stylesheet" href="https://godzm4tt3o.github.io/style.css">
-    
+        <script>
+        document.onmousemove = function(event){
+            document.body.style.backgroundPosition = ((event.pageX * -1) / 20)+"px "+((event.pageY * -1) / 20)+"px";
+        };
+    </script>
 <body>
 <style>
     a {
