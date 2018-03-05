@@ -9,7 +9,11 @@
     <meta charset="UTF-8">
     <link rel="text/javascript" href="https://godzm4tt3o.github.io/fa.php">
         <link rel="stylesheet" href="https://godzm4tt3o.github.io/style.css">
-    
+    <script>
+        document.onmousemove = function(event){
+            document.body.style.backgroundPosition = ((event.pageX * -1) / 20)+"px "+((event.pageY * -1) / 20)+"px";
+        };
+    </script>
 <body>
 <style>
     body{
