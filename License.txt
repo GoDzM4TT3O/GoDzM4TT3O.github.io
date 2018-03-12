@@ -1,0 +1,14 @@
+Copyright - GoDzM4TT3O 2018
+
+
+So, you want to use this to create your website, huh? Here are the rules that you need to follow.
+
+1- If you use this, you need to credit me. OR
+
+1.2- If you use this, create a file named "Credits.txt" with this text:
+
+"This website was originally built by GoDzM4TT3O.
+Original website is open source, under a custom license.
+This is the original website - https://godzm4tt3o.github.io"
+
+1.3 DO NOT CLAIM THIS AS YOUR PROPERTY.
