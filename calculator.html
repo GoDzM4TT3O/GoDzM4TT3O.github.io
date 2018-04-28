@@ -333,6 +333,21 @@ FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(A
          background-color: blue;
       }
    </style>
+   <div id="speedconverter">
+      <p>
+  <label>MPH</label>
+  <input id="inputMPH" type="number" placeholder="MPH"
+  oninput="speedConverter(this.value)"
+  onchange="speedConverter(this.value)">
+</p>
+<p>KPH: <span id="outputKPH"></span></p>
+   <script>
+      function speedConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputKPH").innerHTML = valNum * 1.609344;
+}
+      </script>
+   </div>
 </head>
 </body>
 </html>
