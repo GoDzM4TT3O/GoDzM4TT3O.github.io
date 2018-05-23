@@ -1,9 +1,599 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>GoDzCydi</title>
-<body>
-<iframe width="100%" height="100%" src="http://godz.dynu.net" />
-</body>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="/lib/ionic/release/css/ionic.css" rel="stylesheet"> 
+       
+    <link href="/css/preview-frame.css?2" rel="stylesheet">
+    <!-- ionic/angularjs js -->
+    <script src="/lib/ionic/release/js/ionic.bundle.js"></script>
+    <script src="/lib/ionicuirouter/ionicUIRouter.js"></script>
+
+    <link type="text/css" rel="stylesheet" media="screen,print" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,300,500,600,700|Crimson+Text:400,400italic,600,600italic,700,700italic|Lora:400,400italic,700,700italic|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic|Noto+Sans:400,400italic,700,700italic|Lato:400,100,100italic,300italic,300,400italic,700,700italic,900,900italic|Muli:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+
+    <link id='android-default-font' rel='text/css' href='/css/android-default-font.css'>
+    <link id='ios-default-font' rel='text/css' href='/css/ios-default-font.css'>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+     <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px !important;
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+      .show-list-numbers-and-dots ul{
+        list-style-type: disc;
+        padding-left:40px;
+      }
+      .show-list-numbers-and-dots ol{
+        list-style-type: decimal;
+        padding-left:40px;
+      }
+    </style>
+
+
+    <script>
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js 
+// 'starter.controllers' is found in controllers.js
+
+var ionicons3_raw = [{"name":"add","class":"ion-ios-add","options":["ios-add","ios-add-outline","md-add"]},{"name":"add-circle","class":"ion-ios-add-circle","options":["ios-add-circle","ios-add-circle-outline","md-add-circle"]},{"name":"alarm","class":"ion-ios-alarm","options":["ios-alarm","ios-alarm-outline","md-alarm"]},{"name":"albums","class":"ion-ios-albums","options":["ios-albums","ios-albums-outline","md-albums"]},{"name":"alert","class":"ion-ios-alert","options":["ios-alert","ios-alert-outline","md-alert"]},{"name":"american-football","class":"ion-ios-american-football","options":["ios-american-football","ios-american-football-outline","md-american-football"]},{"name":"analytics","class":"ion-ios-analytics","options":["ios-analytics","ios-analytics-outline","md-analytics"]},{"name":"android","class":"ion-logo-android","options":["logo-android"]},{"name":"angular","class":"ion-logo-angular","options":["logo-angular"]},{"name":"aperture","class":"ion-ios-aperture","options":["ios-aperture","ios-aperture-outline","md-aperture"]},{"name":"apple","class":"ion-logo-apple","options":["logo-apple"]},{"name":"apps","class":"ion-ios-apps","options":["ios-apps","ios-apps-outline","md-apps"]},{"name":"appstore","class":"ion-ios-appstore","options":["ios-appstore","ios-appstore-outline","md-appstore"]},{"name":"archive","class":"ion-ios-archive","options":["ios-archive","ios-archive-outline","md-archive"]},{"name":"arrow-back","class":"ion-ios-arrow-back","options":["ios-arrow-back","ios-arrow-back-outline","md-arrow-back"]},{"name":"arrow-down","class":"ion-ios-arrow-down","options":["ios-arrow-down","ios-arrow-down-outline","md-arrow-down"]},{"name":"arrow-dropdown","class":"ion-ios-arrow-dropdown","options":["ios-arrow-dropdown","ios-arrow-dropdown-outline","md-arrow-dropdown"]},{"name":"arrow-dropdown-circle","class":"ion-ios-arrow-dropdown-circle","options":["ios-arrow-dropdown-circle","ios-arrow-dropdown-circle-outline","md-arrow-dropdown-circle"]},{"name":"arrow-dropleft","class":"ion-ios-arrow-dropleft","options":["ios-arrow-dropleft","ios-arrow-dropleft-outline","md-arrow-dropleft"]},{"name":"arrow-dropleft-circle","class":"ion-ios-arrow-dropleft-circle","options":["ios-arrow-dropleft-circle","ios-arrow-dropleft-circle-outline","md-arrow-dropleft-circle"]},{"name":"arrow-dropright","class":"ion-ios-arrow-dropright","options":["ios-arrow-dropright","ios-arrow-dropright-outline","md-arrow-dropright"]},{"name":"arrow-dropright-circle","class":"ion-ios-arrow-dropright-circle","options":["ios-arrow-dropright-circle","ios-arrow-dropright-circle-outline","md-arrow-dropright-circle"]},{"name":"arrow-dropup","class":"ion-ios-arrow-dropup","options":["ios-arrow-dropup","ios-arrow-dropup-outline","md-arrow-dropup"]},{"name":"arrow-dropup-circle","class":"ion-ios-arrow-dropup-circle","options":["ios-arrow-dropup-circle","ios-arrow-dropup-circle-outline","md-arrow-dropup-circle"]},{"name":"arrow-forward","class":"ion-ios-arrow-forward","options":["ios-arrow-forward","ios-arrow-forward-outline","md-arrow-forward"]},{"name":"arrow-round-back","class":"ion-ios-arrow-round-back","options":["ios-arrow-round-back","ios-arrow-round-back-outline","md-arrow-round-back"]},{"name":"arrow-round-down","class":"ion-ios-arrow-round-down","options":["ios-arrow-round-down","ios-arrow-round-down-outline","md-arrow-round-down"]},{"name":"arrow-round-forward","class":"ion-ios-arrow-round-forward","options":["ios-arrow-round-forward","ios-arrow-round-forward-outline","md-arrow-round-forward"]},{"name":"arrow-round-up","class":"ion-ios-arrow-round-up","options":["ios-arrow-round-up","ios-arrow-round-up-outline","md-arrow-round-up"]},{"name":"arrow-up","class":"ion-ios-arrow-up","options":["ios-arrow-up","ios-arrow-up-outline","md-arrow-up"]},{"name":"at","class":"ion-ios-at","options":["ios-at","ios-at-outline","md-at"]},{"name":"attach","class":"ion-ios-attach","options":["ios-attach","ios-attach-outline","md-attach"]},{"name":"backspace","class":"ion-ios-backspace","options":["ios-backspace","ios-backspace-outline","md-backspace"]},{"name":"barcode","class":"ion-ios-barcode","options":["ios-barcode","ios-barcode-outline","md-barcode"]},{"name":"baseball","class":"ion-ios-baseball","options":["ios-baseball","ios-baseball-outline","md-baseball"]},{"name":"basket","class":"ion-ios-basket","options":["ios-basket","ios-basket-outline","md-basket"]},{"name":"basketball","class":"ion-ios-basketball","options":["ios-basketball","ios-basketball-outline","md-basketball"]},{"name":"battery-charging","class":"ion-ios-battery-charging","options":["ios-battery-charging","ios-battery-charging-outline","md-battery-charging"]},{"name":"battery-dead","class":"ion-ios-battery-dead","options":["ios-battery-dead","ios-battery-dead-outline","md-battery-dead"]},{"name":"battery-full","class":"ion-ios-battery-full","options":["ios-battery-full","ios-battery-full-outline","md-battery-full"]},{"name":"beaker","class":"ion-ios-beaker","options":["ios-beaker","ios-beaker-outline","md-beaker"]},{"name":"beer","class":"ion-ios-beer","options":["ios-beer","ios-beer-outline","md-beer"]},{"name":"bicycle","class":"ion-ios-bicycle","options":["ios-bicycle","ios-bicycle-outline","md-bicycle"]},{"name":"bitcoin","class":"ion-logo-bitcoin","options":["logo-bitcoin"]},{"name":"bluetooth","class":"ion-ios-bluetooth","options":["ios-bluetooth","ios-bluetooth-outline","md-bluetooth"]},{"name":"boat","class":"ion-ios-boat","options":["ios-boat","ios-boat-outline","md-boat"]},{"name":"body","class":"ion-ios-body","options":["ios-body","ios-body-outline","md-body"]},{"name":"bonfire","class":"ion-ios-bonfire","options":["ios-bonfire","ios-bonfire-outline","md-bonfire"]},{"name":"book","class":"ion-ios-book","options":["ios-book","ios-book-outline","md-book"]},{"name":"bookmark","class":"ion-ios-bookmark","options":["ios-bookmark","ios-bookmark-outline","md-bookmark"]},{"name":"bookmarks","class":"ion-ios-bookmarks","options":["ios-bookmarks","ios-bookmarks-outline","md-bookmarks"]},{"name":"bowtie","class":"ion-ios-bowtie","options":["ios-bowtie","ios-bowtie-outline","md-bowtie"]},{"name":"briefcase","class":"ion-ios-briefcase","options":["ios-briefcase","ios-briefcase-outline","md-briefcase"]},{"name":"browsers","class":"ion-ios-browsers","options":["ios-browsers","ios-browsers-outline","md-browsers"]},{"name":"brush","class":"ion-ios-brush","options":["ios-brush","ios-brush-outline","md-brush"]},{"name":"buffer","class":"ion-logo-buffer","options":["logo-buffer"]},{"name":"bug","class":"ion-ios-bug","options":["ios-bug","ios-bug-outline","md-bug"]},{"name":"build","class":"ion-ios-build","options":["ios-build","ios-build-outline","md-build"]},{"name":"bulb","class":"ion-ios-bulb","options":["ios-bulb","ios-bulb-outline","md-bulb"]},{"name":"bus","class":"ion-ios-bus","options":["ios-bus","ios-bus-outline","md-bus"]},{"name":"cafe","class":"ion-ios-cafe","options":["ios-cafe","ios-cafe-outline","md-cafe"]},{"name":"calculator","class":"ion-ios-calculator","options":["ios-calculator","ios-calculator-outline","md-calculator"]},{"name":"calendar","class":"ion-ios-calendar","options":["ios-calendar","ios-calendar-outline","md-calendar"]},{"name":"call","class":"ion-ios-call","options":["ios-call","ios-call-outline","md-call"]},{"name":"camera","class":"ion-ios-camera","options":["ios-camera","ios-camera-outline","md-camera"]},{"name":"car","class":"ion-ios-car","options":["ios-car","ios-car-outline","md-car"]},{"name":"card","class":"ion-ios-card","options":["ios-card","ios-card-outline","md-card"]},{"name":"cart","class":"ion-ios-cart","options":["ios-cart","ios-cart-outline","md-cart"]},{"name":"cash","class":"ion-ios-cash","options":["ios-cash","ios-cash-outline","md-cash"]},{"name":"chatboxes","class":"ion-ios-chatboxes","options":["ios-chatboxes","ios-chatboxes-outline","md-chatboxes"]},{"name":"chatbubbles","class":"ion-ios-chatbubbles","options":["ios-chatbubbles","ios-chatbubbles-outline","md-chatbubbles"]},{"name":"checkbox","class":"ion-ios-checkbox","options":["ios-checkbox","ios-checkbox-outline","md-checkbox"]},{"name":"checkbox-outline","class":"ion-ios-checkbox-outline","options":["ios-checkbox-outline","ios-checkbox-outline-outline","md-checkbox-outline"]},{"name":"checkmark","class":"ion-ios-checkmark","options":["ios-checkmark","ios-checkmark-outline","md-checkmark"]},{"name":"checkmark-circle","class":"ion-ios-checkmark-circle","options":["ios-checkmark-circle","ios-checkmark-circle-outline","md-checkmark-circle"]},{"name":"checkmark-circle-outline","class":"ion-ios-checkmark-circle-outline","options":["ios-checkmark-circle-outline","ios-checkmark-circle-outline-outline","md-checkmark-circle-outline"]},{"name":"chrome","class":"ion-logo-chrome","options":["logo-chrome"]},{"name":"clipboard","class":"ion-ios-clipboard","options":["ios-clipboard","ios-clipboard-outline","md-clipboard"]},{"name":"clock","class":"ion-ios-clock","options":["ios-clock","ios-clock-outline","md-clock"]},{"name":"close","class":"ion-ios-close","options":["ios-close","ios-close-outline","md-close"]},{"name":"close-circle","class":"ion-ios-close-circle","options":["ios-close-circle","ios-close-circle-outline","md-close-circle"]},{"name":"closed-captioning","class":"ion-ios-closed-captioning","options":["ios-closed-captioning","ios-closed-captioning-outline","md-closed-captioning"]},{"name":"cloud","class":"ion-ios-cloud","options":["ios-cloud","ios-cloud-outline","md-cloud"]},{"name":"cloud-circle","class":"ion-ios-cloud-circle","options":["ios-cloud-circle","ios-cloud-circle-outline","md-cloud-circle"]},{"name":"cloud-done","class":"ion-ios-cloud-done","options":["ios-cloud-done","ios-cloud-done-outline","md-cloud-done"]},{"name":"cloud-download","class":"ion-ios-cloud-download","options":["ios-cloud-download","ios-cloud-download-outline","md-cloud-download"]},{"name":"cloud-outline","class":"ion-ios-cloud-outline","options":["ios-cloud-outline","ios-cloud-outline-outline","md-cloud-outline"]},{"name":"cloud-upload","class":"ion-ios-cloud-upload","options":["ios-cloud-upload","ios-cloud-upload-outline","md-cloud-upload"]},{"name":"cloudy","class":"ion-ios-cloudy","options":["ios-cloudy","ios-cloudy-outline","md-cloudy"]},{"name":"cloudy-night","class":"ion-ios-cloudy-night","options":["ios-cloudy-night","ios-cloudy-night-outline","md-cloudy-night"]},{"name":"code","class":"ion-ios-code","options":["ios-code","ios-code-outline","md-code"]},{"name":"code-download","class":"ion-ios-code-download","options":["ios-code-download","ios-code-download-outline","md-code-download"]},{"name":"code-working","class":"ion-ios-code-working","options":["ios-code-working","ios-code-working-outline","md-code-working"]},{"name":"codepen","class":"ion-logo-codepen","options":["logo-codepen"]},{"name":"cog","class":"ion-ios-cog","options":["ios-cog","ios-cog-outline","md-cog"]},{"name":"color-fill","class":"ion-ios-color-fill","options":["ios-color-fill","ios-color-fill-outline","md-color-fill"]},{"name":"color-filter","class":"ion-ios-color-filter","options":["ios-color-filter","ios-color-filter-outline","md-color-filter"]},{"name":"color-palette","class":"ion-ios-color-palette","options":["ios-color-palette","ios-color-palette-outline","md-color-palette"]},{"name":"color-wand","class":"ion-ios-color-wand","options":["ios-color-wand","ios-color-wand-outline","md-color-wand"]},{"name":"compass","class":"ion-ios-compass","options":["ios-compass","ios-compass-outline","md-compass"]},{"name":"construct","class":"ion-ios-construct","options":["ios-construct","ios-construct-outline","md-construct"]},{"name":"contact","class":"ion-ios-contact","options":["ios-contact","ios-contact-outline","md-contact"]},{"name":"contacts","class":"ion-ios-contacts","options":["ios-contacts","ios-contacts-outline","md-contacts"]},{"name":"contract","class":"ion-ios-contract","options":["ios-contract","ios-contract-outline","md-contract"]},{"name":"contrast","class":"ion-ios-contrast","options":["ios-contrast","ios-contrast-outline","md-contrast"]},{"name":"copy","class":"ion-ios-copy","options":["ios-copy","ios-copy-outline","md-copy"]},{"name":"create","class":"ion-ios-create","options":["ios-create","ios-create-outline","md-create"]},{"name":"crop","class":"ion-ios-crop","options":["ios-crop","ios-crop-outline","md-crop"]},{"name":"css3","class":"ion-logo-css3","options":["logo-css3"]},{"name":"cube","class":"ion-ios-cube","options":["ios-cube","ios-cube-outline","md-cube"]},{"name":"cut","class":"ion-ios-cut","options":["ios-cut","ios-cut-outline","md-cut"]},{"name":"designernews","class":"ion-logo-designernews","options":["logo-designernews"]},{"name":"desktop","class":"ion-ios-desktop","options":["ios-desktop","ios-desktop-outline","md-desktop"]},{"name":"disc","class":"ion-ios-disc","options":["ios-disc","ios-disc-outline","md-disc"]},{"name":"document","class":"ion-ios-document","options":["ios-document","ios-document-outline","md-document"]},{"name":"done-all","class":"ion-ios-done-all","options":["ios-done-all","ios-done-all-outline","md-done-all"]},{"name":"download","class":"ion-ios-download","options":["ios-download","ios-download-outline","md-download"]},{"name":"dribbble","class":"ion-logo-dribbble","options":["logo-dribbble"]},{"name":"dropbox","class":"ion-logo-dropbox","options":["logo-dropbox"]},{"name":"easel","class":"ion-ios-easel","options":["ios-easel","ios-easel-outline","md-easel"]},{"name":"egg","class":"ion-ios-egg","options":["ios-egg","ios-egg-outline","md-egg"]},{"name":"euro","class":"ion-logo-euro","options":["logo-euro"]},{"name":"exit","class":"ion-ios-exit","options":["ios-exit","ios-exit-outline","md-exit"]},{"name":"expand","class":"ion-ios-expand","options":["ios-expand","ios-expand-outline","md-expand"]},{"name":"eye","class":"ion-ios-eye","options":["ios-eye","ios-eye-outline","md-eye"]},{"name":"eye-off","class":"ion-ios-eye-off","options":["ios-eye-off","ios-eye-off-outline","md-eye-off"]},{"name":"facebook","class":"ion-logo-facebook","options":["logo-facebook"]},{"name":"fastforward","class":"ion-ios-fastforward","options":["ios-fastforward","ios-fastforward-outline","md-fastforward"]},{"name":"female","class":"ion-ios-female","options":["ios-female","ios-female-outline","md-female"]},{"name":"filing","class":"ion-ios-filing","options":["ios-filing","ios-filing-outline","md-filing"]},{"name":"film","class":"ion-ios-film","options":["ios-film","ios-film-outline","md-film"]},{"name":"finger-print","class":"ion-ios-finger-print","options":["ios-finger-print","ios-finger-print-outline","md-finger-print"]},{"name":"flag","class":"ion-ios-flag","options":["ios-flag","ios-flag-outline","md-flag"]},{"name":"flame","class":"ion-ios-flame","options":["ios-flame","ios-flame-outline","md-flame"]},{"name":"flash","class":"ion-ios-flash","options":["ios-flash","ios-flash-outline","md-flash"]},{"name":"flask","class":"ion-ios-flask","options":["ios-flask","ios-flask-outline","md-flask"]},{"name":"flower","class":"ion-ios-flower","options":["ios-flower","ios-flower-outline","md-flower"]},{"name":"folder","class":"ion-ios-folder","options":["ios-folder","ios-folder-outline","md-folder"]},{"name":"folder-open","class":"ion-ios-folder-open","options":["ios-folder-open","ios-folder-open-outline","md-folder-open"]},{"name":"football","class":"ion-ios-football","options":["ios-football","ios-football-outline","md-football"]},{"name":"foursquare","class":"ion-logo-foursquare","options":["logo-foursquare"]},{"name":"freebsd-devil","class":"ion-logo-freebsd-devil","options":["logo-freebsd-devil"]},{"name":"funnel","class":"ion-ios-funnel","options":["ios-funnel","ios-funnel-outline","md-funnel"]},{"name":"game-controller-a","class":"ion-ios-game-controller-a","options":["ios-game-controller-a","ios-game-controller-a-outline","md-game-controller-a"]},{"name":"game-controller-b","class":"ion-ios-game-controller-b","options":["ios-game-controller-b","ios-game-controller-b-outline","md-game-controller-b"]},{"name":"git-branch","class":"ion-ios-git-branch","options":["ios-git-branch","ios-git-branch-outline","md-git-branch"]},{"name":"git-commit","class":"ion-ios-git-commit","options":["ios-git-commit","ios-git-commit-outline","md-git-commit"]},{"name":"git-compare","class":"ion-ios-git-compare","options":["ios-git-compare","ios-git-compare-outline","md-git-compare"]},{"name":"git-merge","class":"ion-ios-git-merge","options":["ios-git-merge","ios-git-merge-outline","md-git-merge"]},{"name":"git-network","class":"ion-ios-git-network","options":["ios-git-network","ios-git-network-outline","md-git-network"]},{"name":"git-pull-request","class":"ion-ios-git-pull-request","options":["ios-git-pull-request","ios-git-pull-request-outline","md-git-pull-request"]},{"name":"github","class":"ion-logo-github","options":["logo-github"]},{"name":"glasses","class":"ion-ios-glasses","options":["ios-glasses","ios-glasses-outline","md-glasses"]},{"name":"globe","class":"ion-ios-globe","options":["ios-globe","ios-globe-outline","md-globe"]},{"name":"google","class":"ion-logo-google","options":["logo-google"]},{"name":"googleplus","class":"ion-logo-googleplus","options":["logo-googleplus"]},{"name":"grid","class":"ion-ios-grid","options":["ios-grid","ios-grid-outline","md-grid"]},{"name":"hackernews","class":"ion-logo-hackernews","options":["logo-hackernews"]},{"name":"hammer","class":"ion-ios-hammer","options":["ios-hammer","ios-hammer-outline","md-hammer"]},{"name":"hand","class":"ion-ios-hand","options":["ios-hand","ios-hand-outline","md-hand"]},{"name":"happy","class":"ion-ios-happy","options":["ios-happy","ios-happy-outline","md-happy"]},{"name":"headset","class":"ion-ios-headset","options":["ios-headset","ios-headset-outline","md-headset"]},{"name":"heart","class":"ion-ios-heart","options":["ios-heart","ios-heart-outline","md-heart"]},{"name":"heart-outline","class":"ion-ios-heart-outline","options":["ios-heart-outline","ios-heart-outline-outline","md-heart-outline"]},{"name":"help","class":"ion-ios-help","options":["ios-help","ios-help-outline","md-help"]},{"name":"help-buoy","class":"ion-ios-help-buoy","options":["ios-help-buoy","ios-help-buoy-outline","md-help-buoy"]},{"name":"help-circle","class":"ion-ios-help-circle","options":["ios-help-circle","ios-help-circle-outline","md-help-circle"]},{"name":"home","class":"ion-ios-home","options":["ios-home","ios-home-outline","md-home"]},{"name":"html5","class":"ion-logo-html5","options":["logo-html5"]},{"name":"ice-cream","class":"ion-ios-ice-cream","options":["ios-ice-cream","ios-ice-cream-outline","md-ice-cream"]},{"name":"image","class":"ion-ios-image","options":["ios-image","ios-image-outline","md-image"]},{"name":"images","class":"ion-ios-images","options":["ios-images","ios-images-outline","md-images"]},{"name":"infinite","class":"ion-ios-infinite","options":["ios-infinite","ios-infinite-outline","md-infinite"]},{"name":"information","class":"ion-ios-information","options":["ios-information","ios-information-outline","md-information"]},{"name":"information-circle","class":"ion-ios-information-circle","options":["ios-information-circle","ios-information-circle-outline","md-information-circle"]},{"name":"instagram","class":"ion-logo-instagram","options":["logo-instagram"]},{"name":"ionic","class":"ion-ios-ionic","options":["ios-ionic","ios-ionic-outline","md-ionic"]},{"name":"ionitron","class":"ion-ios-ionitron","options":["ios-ionitron","ios-ionitron-outline","md-ionitron"]},{"name":"javascript","class":"ion-logo-javascript","options":["logo-javascript"]},{"name":"jet","class":"ion-ios-jet","options":["ios-jet","ios-jet-outline","md-jet"]},{"name":"key","class":"ion-ios-key","options":["ios-key","ios-key-outline","md-key"]},{"name":"keypad","class":"ion-ios-keypad","options":["ios-keypad","ios-keypad-outline","md-keypad"]},{"name":"laptop","class":"ion-ios-laptop","options":["ios-laptop","ios-laptop-outline","md-laptop"]},{"name":"leaf","class":"ion-ios-leaf","options":["ios-leaf","ios-leaf-outline","md-leaf"]},{"name":"link","class":"ion-ios-link","options":["ios-link","ios-link-outline","md-link"]},{"name":"linkedin","class":"ion-logo-linkedin","options":["logo-linkedin"]},{"name":"list","class":"ion-ios-list","options":["ios-list","ios-list-outline","md-list"]},{"name":"list-box","class":"ion-ios-list-box","options":["ios-list-box","ios-list-box-outline","md-list-box"]},{"name":"locate","class":"ion-ios-locate","options":["ios-locate","ios-locate-outline","md-locate"]},{"name":"lock","class":"ion-ios-lock","options":["ios-lock","ios-lock-outline","md-lock"]},{"name":"log-in","class":"ion-ios-log-in","options":["ios-log-in","ios-log-in-outline","md-log-in"]},{"name":"log-out","class":"ion-ios-log-out","options":["ios-log-out","ios-log-out-outline","md-log-out"]},{"name":"magnet","class":"ion-ios-magnet","options":["ios-magnet","ios-magnet-outline","md-magnet"]},{"name":"mail","class":"ion-ios-mail","options":["ios-mail","ios-mail-outline","md-mail"]},{"name":"mail-open","class":"ion-ios-mail-open","options":["ios-mail-open","ios-mail-open-outline","md-mail-open"]},{"name":"male","class":"ion-ios-male","options":["ios-male","ios-male-outline","md-male"]},{"name":"man","class":"ion-ios-man","options":["ios-man","ios-man-outline","md-man"]},{"name":"map","class":"ion-ios-map","options":["ios-map","ios-map-outline","md-map"]},{"name":"markdown","class":"ion-logo-markdown","options":["logo-markdown"]},{"name":"medal","class":"ion-ios-medal","options":["ios-medal","ios-medal-outline","md-medal"]},{"name":"medical","class":"ion-ios-medical","options":["ios-medical","ios-medical-outline","md-medical"]},{"name":"medkit","class":"ion-ios-medkit","options":["ios-medkit","ios-medkit-outline","md-medkit"]},{"name":"megaphone","class":"ion-ios-megaphone","options":["ios-megaphone","ios-megaphone-outline","md-megaphone"]},{"name":"menu","class":"ion-ios-menu","options":["ios-menu","ios-menu-outline","md-menu"]},{"name":"mic","class":"ion-ios-mic","options":["ios-mic","ios-mic-outline","md-mic"]},{"name":"mic-off","class":"ion-ios-mic-off","options":["ios-mic-off","ios-mic-off-outline","md-mic-off"]},{"name":"microphone","class":"ion-ios-microphone","options":["ios-microphone","ios-microphone-outline","md-microphone"]},{"name":"moon","class":"ion-ios-moon","options":["ios-moon","ios-moon-outline","md-moon"]},{"name":"more","class":"ion-ios-more","options":["ios-more","ios-more-outline","md-more"]},{"name":"move","class":"ion-ios-move","options":["ios-move","ios-move-outline","md-move"]},{"name":"musical-note","class":"ion-ios-musical-note","options":["ios-musical-note","ios-musical-note-outline","md-musical-note"]},{"name":"musical-notes","class":"ion-ios-musical-notes","options":["ios-musical-notes","ios-musical-notes-outline","md-musical-notes"]},{"name":"navigate","class":"ion-ios-navigate","options":["ios-navigate","ios-navigate-outline","md-navigate"]},{"name":"no-smoking","class":"ion-ios-no-smoking","options":["ios-no-smoking","ios-no-smoking-outline","md-no-smoking"]},{"name":"nodejs","class":"ion-logo-nodejs","options":["logo-nodejs"]},{"name":"notifications","class":"ion-ios-notifications","options":["ios-notifications","ios-notifications-outline","md-notifications"]},{"name":"notifications-off","class":"ion-ios-notifications-off","options":["ios-notifications-off","ios-notifications-off-outline","md-notifications-off"]},{"name":"notifications-outline","class":"ion-ios-notifications-outline","options":["ios-notifications-outline","ios-notifications-outline-outline","md-notifications-outline"]},{"name":"nuclear","class":"ion-ios-nuclear","options":["ios-nuclear","ios-nuclear-outline","md-nuclear"]},{"name":"nutrition","class":"ion-ios-nutrition","options":["ios-nutrition","ios-nutrition-outline","md-nutrition"]},{"name":"octocat","class":"ion-logo-octocat","options":["logo-octocat"]},{"name":"open","class":"ion-ios-open","options":["ios-open","ios-open-outline","md-open"]},{"name":"options","class":"ion-ios-options","options":["ios-options","ios-options-outline","md-options"]},{"name":"outlet","class":"ion-ios-outlet","options":["ios-outlet","ios-outlet-outline","md-outlet"]},{"name":"paper","class":"ion-ios-paper","options":["ios-paper","ios-paper-outline","md-paper"]},{"name":"paper-plane","class":"ion-ios-paper-plane","options":["ios-paper-plane","ios-paper-plane-outline","md-paper-plane"]},{"name":"partly-sunny","class":"ion-ios-partly-sunny","options":["ios-partly-sunny","ios-partly-sunny-outline","md-partly-sunny"]},{"name":"pause","class":"ion-ios-pause","options":["ios-pause","ios-pause-outline","md-pause"]},{"name":"paw","class":"ion-ios-paw","options":["ios-paw","ios-paw-outline","md-paw"]},{"name":"people","class":"ion-ios-people","options":["ios-people","ios-people-outline","md-people"]},{"name":"person","class":"ion-ios-person","options":["ios-person","ios-person-outline","md-person"]},{"name":"person-add","class":"ion-ios-person-add","options":["ios-person-add","ios-person-add-outline","md-person-add"]},{"name":"phone-landscape","class":"ion-ios-phone-landscape","options":["ios-phone-landscape","ios-phone-landscape-outline","md-phone-landscape"]},{"name":"phone-portrait","class":"ion-ios-phone-portrait","options":["ios-phone-portrait","ios-phone-portrait-outline","md-phone-portrait"]},{"name":"photos","class":"ion-ios-photos","options":["ios-photos","ios-photos-outline","md-photos"]},{"name":"pie","class":"ion-ios-pie","options":["ios-pie","ios-pie-outline","md-pie"]},{"name":"pin","class":"ion-ios-pin","options":["ios-pin","ios-pin-outline","md-pin"]},{"name":"pint","class":"ion-ios-pint","options":["ios-pint","ios-pint-outline","md-pint"]},{"name":"pinterest","class":"ion-logo-pinterest","options":["logo-pinterest"]},{"name":"pizza","class":"ion-ios-pizza","options":["ios-pizza","ios-pizza-outline","md-pizza"]},{"name":"plane","class":"ion-ios-plane","options":["ios-plane","ios-plane-outline","md-plane"]},{"name":"planet","class":"ion-ios-planet","options":["ios-planet","ios-planet-outline","md-planet"]},{"name":"play","class":"ion-ios-play","options":["ios-play","ios-play-outline","md-play"]},{"name":"playstation","class":"ion-logo-playstation","options":["logo-playstation"]},{"name":"podium","class":"ion-ios-podium","options":["ios-podium","ios-podium-outline","md-podium"]},{"name":"power","class":"ion-ios-power","options":["ios-power","ios-power-outline","md-power"]},{"name":"pricetag","class":"ion-ios-pricetag","options":["ios-pricetag","ios-pricetag-outline","md-pricetag"]},{"name":"pricetags","class":"ion-ios-pricetags","options":["ios-pricetags","ios-pricetags-outline","md-pricetags"]},{"name":"print","class":"ion-ios-print","options":["ios-print","ios-print-outline","md-print"]},{"name":"pulse","class":"ion-ios-pulse","options":["ios-pulse","ios-pulse-outline","md-pulse"]},{"name":"python","class":"ion-logo-python","options":["logo-python"]},{"name":"qr-scanner","class":"ion-ios-qr-scanner","options":["ios-qr-scanner","ios-qr-scanner-outline","md-qr-scanner"]},{"name":"quote","class":"ion-ios-quote","options":["ios-quote","ios-quote-outline","md-quote"]},{"name":"radio","class":"ion-ios-radio","options":["ios-radio","ios-radio-outline","md-radio"]},{"name":"radio-button-off","class":"ion-ios-radio-button-off","options":["ios-radio-button-off","ios-radio-button-off-outline","md-radio-button-off"]},{"name":"radio-button-on","class":"ion-ios-radio-button-on","options":["ios-radio-button-on","ios-radio-button-on-outline","md-radio-button-on"]},{"name":"rainy","class":"ion-ios-rainy","options":["ios-rainy","ios-rainy-outline","md-rainy"]},{"name":"recording","class":"ion-ios-recording","options":["ios-recording","ios-recording-outline","md-recording"]},{"name":"reddit","class":"ion-logo-reddit","options":["logo-reddit"]},{"name":"redo","class":"ion-ios-redo","options":["ios-redo","ios-redo-outline","md-redo"]},{"name":"refresh","class":"ion-ios-refresh","options":["ios-refresh","ios-refresh-outline","md-refresh"]},{"name":"refresh-circle","class":"ion-ios-refresh-circle","options":["ios-refresh-circle","ios-refresh-circle-outline","md-refresh-circle"]},{"name":"remove","class":"ion-ios-remove","options":["ios-remove","ios-remove-outline","md-remove"]},{"name":"remove-circle","class":"ion-ios-remove-circle","options":["ios-remove-circle","ios-remove-circle-outline","md-remove-circle"]},{"name":"reorder","class":"ion-ios-reorder","options":["ios-reorder","ios-reorder-outline","md-reorder"]},{"name":"repeat","class":"ion-ios-repeat","options":["ios-repeat","ios-repeat-outline","md-repeat"]},{"name":"resize","class":"ion-ios-resize","options":["ios-resize","ios-resize-outline","md-resize"]},{"name":"restaurant","class":"ion-ios-restaurant","options":["ios-restaurant","ios-restaurant-outline","md-restaurant"]},{"name":"return-left","class":"ion-ios-return-left","options":["ios-return-left","ios-return-left-outline","md-return-left"]},{"name":"return-right","class":"ion-ios-return-right","options":["ios-return-right","ios-return-right-outline","md-return-right"]},{"name":"reverse-camera","class":"ion-ios-reverse-camera","options":["ios-reverse-camera","ios-reverse-camera-outline","md-reverse-camera"]},{"name":"rewind","class":"ion-ios-rewind","options":["ios-rewind","ios-rewind-outline","md-rewind"]},{"name":"ribbon","class":"ion-ios-ribbon","options":["ios-ribbon","ios-ribbon-outline","md-ribbon"]},{"name":"rose","class":"ion-ios-rose","options":["ios-rose","ios-rose-outline","md-rose"]},{"name":"rss","class":"ion-logo-rss","options":["logo-rss"]},{"name":"sad","class":"ion-ios-sad","options":["ios-sad","ios-sad-outline","md-sad"]},{"name":"sass","class":"ion-logo-sass","options":["logo-sass"]},{"name":"school","class":"ion-ios-school","options":["ios-school","ios-school-outline","md-school"]},{"name":"search","class":"ion-ios-search","options":["ios-search","ios-search-outline","md-search"]},{"name":"send","class":"ion-ios-send","options":["ios-send","ios-send-outline","md-send"]},{"name":"settings","class":"ion-ios-settings","options":["ios-settings","ios-settings-outline","md-settings"]},{"name":"share","class":"ion-ios-share","options":["ios-share","ios-share-outline","md-share"]},{"name":"share-alt","class":"ion-ios-share-alt","options":["ios-share-alt","ios-share-alt-outline","md-share-alt"]},{"name":"shirt","class":"ion-ios-shirt","options":["ios-shirt","ios-shirt-outline","md-shirt"]},{"name":"shuffle","class":"ion-ios-shuffle","options":["ios-shuffle","ios-shuffle-outline","md-shuffle"]},{"name":"skip-backward","class":"ion-ios-skip-backward","options":["ios-skip-backward","ios-skip-backward-outline","md-skip-backward"]},{"name":"skip-forward","class":"ion-ios-skip-forward","options":["ios-skip-forward","ios-skip-forward-outline","md-skip-forward"]},{"name":"skype","class":"ion-logo-skype","options":["logo-skype"]},{"name":"snapchat","class":"ion-logo-snapchat","options":["logo-snapchat"]},{"name":"snow","class":"ion-ios-snow","options":["ios-snow","ios-snow-outline","md-snow"]},{"name":"speedometer","class":"ion-ios-speedometer","options":["ios-speedometer","ios-speedometer-outline","md-speedometer"]},{"name":"square","class":"ion-ios-square","options":["ios-square","ios-square-outline","md-square"]},{"name":"square-outline","class":"ion-ios-square-outline","options":["ios-square-outline","ios-square-outline-outline","md-square-outline"]},{"name":"star","class":"ion-ios-star","options":["ios-star","ios-star-outline","md-star"]},{"name":"star-half","class":"ion-ios-star-half","options":["ios-star-half","ios-star-half-outline","md-star-half"]},{"name":"star-outline","class":"ion-ios-star-outline","options":["ios-star-outline","ios-star-outline-outline","md-star-outline"]},{"name":"stats","class":"ion-ios-stats","options":["ios-stats","ios-stats-outline","md-stats"]},{"name":"steam","class":"ion-logo-steam","options":["logo-steam"]},{"name":"stopwatch","class":"ion-ios-stopwatch","options":["ios-stopwatch","ios-stopwatch-outline","md-stopwatch"]},{"name":"subway","class":"ion-ios-subway","options":["ios-subway","ios-subway-outline","md-subway"]},{"name":"sunny","class":"ion-ios-sunny","options":["ios-sunny","ios-sunny-outline","md-sunny"]},{"name":"swap","class":"ion-ios-swap","options":["ios-swap","ios-swap-outline","md-swap"]},{"name":"switch","class":"ion-ios-switch","options":["ios-switch","ios-switch-outline","md-switch"]},{"name":"sync","class":"ion-ios-sync","options":["ios-sync","ios-sync-outline","md-sync"]},{"name":"tablet-landscape","class":"ion-ios-tablet-landscape","options":["ios-tablet-landscape","ios-tablet-landscape-outline","md-tablet-landscape"]},{"name":"tablet-portrait","class":"ion-ios-tablet-portrait","options":["ios-tablet-portrait","ios-tablet-portrait-outline","md-tablet-portrait"]},{"name":"tennisball","class":"ion-ios-tennisball","options":["ios-tennisball","ios-tennisball-outline","md-tennisball"]},{"name":"text","class":"ion-ios-text","options":["ios-text","ios-text-outline","md-text"]},{"name":"thermometer","class":"ion-ios-thermometer","options":["ios-thermometer","ios-thermometer-outline","md-thermometer"]},{"name":"thumbs-down","class":"ion-ios-thumbs-down","options":["ios-thumbs-down","ios-thumbs-down-outline","md-thumbs-down"]},{"name":"thumbs-up","class":"ion-ios-thumbs-up","options":["ios-thumbs-up","ios-thumbs-up-outline","md-thumbs-up"]},{"name":"thunderstorm","class":"ion-ios-thunderstorm","options":["ios-thunderstorm","ios-thunderstorm-outline","md-thunderstorm"]},{"name":"time","class":"ion-ios-time","options":["ios-time","ios-time-outline","md-time"]},{"name":"timer","class":"ion-ios-timer","options":["ios-timer","ios-timer-outline","md-timer"]},{"name":"train","class":"ion-ios-train","options":["ios-train","ios-train-outline","md-train"]},{"name":"transgender","class":"ion-ios-transgender","options":["ios-transgender","ios-transgender-outline","md-transgender"]},{"name":"trash","class":"ion-ios-trash","options":["ios-trash","ios-trash-outline","md-trash"]},{"name":"trending-down","class":"ion-ios-trending-down","options":["ios-trending-down","ios-trending-down-outline","md-trending-down"]},{"name":"trending-up","class":"ion-ios-trending-up","options":["ios-trending-up","ios-trending-up-outline","md-trending-up"]},{"name":"trophy","class":"ion-ios-trophy","options":["ios-trophy","ios-trophy-outline","md-trophy"]},{"name":"tumblr","class":"ion-logo-tumblr","options":["logo-tumblr"]},{"name":"tux","class":"ion-logo-tux","options":["logo-tux"]},{"name":"twitch","class":"ion-logo-twitch","options":["logo-twitch"]},{"name":"twitter","class":"ion-logo-twitter","options":["logo-twitter"]},{"name":"umbrella","class":"ion-ios-umbrella","options":["ios-umbrella","ios-umbrella-outline","md-umbrella"]},{"name":"undo","class":"ion-ios-undo","options":["ios-undo","ios-undo-outline","md-undo"]},{"name":"unlock","class":"ion-ios-unlock","options":["ios-unlock","ios-unlock-outline","md-unlock"]},{"name":"usd","class":"ion-logo-usd","options":["logo-usd"]},{"name":"videocam","class":"ion-ios-videocam","options":["ios-videocam","ios-videocam-outline","md-videocam"]},{"name":"vimeo","class":"ion-logo-vimeo","options":["logo-vimeo"]},{"name":"volume-down","class":"ion-ios-volume-down","options":["ios-volume-down","ios-volume-down-outline","md-volume-down"]},{"name":"volume-mute","class":"ion-ios-volume-mute","options":["ios-volume-mute","ios-volume-mute-outline","md-volume-mute"]},{"name":"volume-off","class":"ion-ios-volume-off","options":["ios-volume-off","ios-volume-off-outline","md-volume-off"]},{"name":"volume-up","class":"ion-ios-volume-up","options":["ios-volume-up","ios-volume-up-outline","md-volume-up"]},{"name":"walk","class":"ion-ios-walk","options":["ios-walk","ios-walk-outline","md-walk"]},{"name":"warning","class":"ion-ios-warning","options":["ios-warning","ios-warning-outline","md-warning"]},{"name":"watch","class":"ion-ios-watch","options":["ios-watch","ios-watch-outline","md-watch"]},{"name":"water","class":"ion-ios-water","options":["ios-water","ios-water-outline","md-water"]},{"name":"whatsapp","class":"ion-logo-whatsapp","options":["logo-whatsapp"]},{"name":"wifi","class":"ion-ios-wifi","options":["ios-wifi","ios-wifi-outline","md-wifi"]},{"name":"windows","class":"ion-logo-windows","options":["logo-windows"]},{"name":"wine","class":"ion-ios-wine","options":["ios-wine","ios-wine-outline","md-wine"]},{"name":"woman","class":"ion-ios-woman","options":["ios-woman","ios-woman-outline","md-woman"]},{"name":"wordpress","class":"ion-logo-wordpress","options":["logo-wordpress"]},{"name":"xbox","class":"ion-logo-xbox","options":["logo-xbox"]},{"name":"yahoo","class":"ion-logo-yahoo","options":["logo-yahoo"]},{"name":"yen","class":"ion-logo-yen","options":["logo-yen"]},{"name":"youtube","class":"ion-logo-youtube","options":["logo-youtube"]}];
+window.ionicons3 = {};
+ionicons3_raw.forEach(function(icon){
+  window.ionicons3[icon.name] = icon;
+});
+
+function ionicon3(icon){
+  var icon_name = icon;
+  var icon_info = window.ionicons3[icon_name];
+  var isAndroid = ionic.Platform.isAndroid();
+  var icon_class = 'ion-';
+  
+  if (icon_info.options.length == 1){
+    icon_class += icon_info.options[0];
+  }else{
+    if (isAndroid){
+      icon_class += icon_info.options[2];
+    }else{
+      icon_class += icon_info.options[0];
+    }
+  }
+
+  return icon_class;
+}
+
+angular.module('app', ['ionic', 'app.controllers', 'ionicUIRouter', 'app.directives','app.services',])
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
+
+.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider, $sceDelegateProvider) {
+
+
+  $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
+
+
+  .state('goDzCydi.goDzCydiHome', {
+    url: '/home',
+    views: {
+      'tab1': {
+        templateUrl: 'templates/goDzCydiHome.html',
+        controller: 'goDzCydiHomeCtrl'
+      }
+    }
+  })
+
+  .state('goDzCydi.goDzCydiApps', {
+    url: '/apps',
+    views: {
+      'tab2': {
+        templateUrl: 'templates/goDzCydiApps.html',
+        controller: 'goDzCydiAppsCtrl'
+      }
+    }
+  })
+
+  .state('goDzCydi.goDzCydiCredits', {
+    url: '/credits',
+    views: {
+      'tab3': {
+        templateUrl: 'templates/goDzCydiCredits.html',
+        controller: 'goDzCydiCreditsCtrl'
+      }
+    }
+  })
+
+  .state('goDzCydi', {
+    url: '/',
+    templateUrl: 'templates/goDzCydi.html',
+    abstract:true
+  })
+
+$urlRouterProvider.otherwise('//home')
+
+
+})
+
+
+
+.directive('disableSideMenuDrag', ['$ionicSideMenuDelegate', '$rootScope', function($ionicSideMenuDelegate, $rootScope) {
+    return {
+        restrict: "A",  
+        controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
+
+            function stopDrag(){
+              $ionicSideMenuDelegate.canDragContent(false);
+            }
+
+            function allowDrag(){
+              $ionicSideMenuDelegate.canDragContent(true);
+            }
+
+            $rootScope.$on('$ionicSlides.slideChangeEnd', allowDrag);
+            $element.on('touchstart', stopDrag);
+            $element.on('touchend', allowDrag);
+            $element.on('mousedown', stopDrag);
+            $element.on('mouseup', allowDrag);
+
+        }]
+    };
+}])
+
+.directive('hrefInappbrowser', function() {
+  return {
+    restrict: 'A',
+    replace: false,
+    transclude: false,
+    link: function(scope, element, attrs) {
+      var href = attrs['hrefInappbrowser'];
+
+      attrs.$observe('hrefInappbrowser', function(val){
+        href = val;
+      });
+
+      element.bind('click', function (event) {
+
+        window.open(href, '_system', 'location=yes');
+
+        event.preventDefault();
+        event.stopPropagation();
+
+      });
+    }
+  };
+})
+
+.run([ '$http', function($http) {
+
+  function injectIconCSS(url){
+    var link = document.createElement( "link" );
+    link.href = url;
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.media = "screen,print";
+    document.getElementsByTagName( "head" )[0].appendChild( link );
+  }
+
+  var set = window.iconset;
+
+  console.info("ICONSET", set);
+
+  if (set=="ionicons3"){
+    injectIconCSS('/lib/ionicons3/css/ionicons.min.css');
+  }else if (set=="ionicons"){
+    injectIconCSS('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+  }
+
+}])
+
+.config(function($provide) {
+  $provide.decorator('ionTabDirective', function($delegate, $timeout) {
+    var directive = $delegate[0];
+
+    var originalCompile = angular.copy(directive.compile);
+
+    directive.compile = originalCompile;
+
+    directive.compile = function(element, attr) {
+
+        var set = window.iconset;
+        if (set=='ionicons3'){
+          attr.icon = ionicon3(attr.icon);
+        }
+
+      return originalCompile(element, attr);
+    };
+    
+    return $delegate;
+  });
+})
+
+.directive('ionicon3', ['$timeout', function($timeout) {
+  return {
+    restrict: 'A',
+    scope: {},
+    link: function($scope, $element, $attr) {
+
+      function loadIcon(){
+
+        if (!window.ionicons3){
+          $timeout(loadIcon, 10);
+          return;
+        }
+
+        $element.addClass(ionicon3($attr['ionicon3']));
+      }
+
+      loadIcon();
+
+    }
+  }
+}])
+
+angular.module('app.controllers', [])
+  
+.controller('goDzCydiHomeCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+   
+.controller('goDzCydiAppsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+   
+.controller('goDzCydiCreditsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+    
+
+
+
+    angular.module('app.directives', [])
+
+.directive('blankDirective', [function(){
+
+}]);
+    angular.module('app.services', [])
+
+.factory('BlankFactory', [function(){
+
+}])
+
+.service('BlankService', [function(){
+
+}]);
+
+    </script>
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7" class="header-hack">
+  <div>
+  <div>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+  </div>
+</div>
+<script id="templates/goDzCydiHome.html" type="text/ng-template">
+<ion-view title="GoDzCydi - Home" id="page2">
+  <ion-content padding="true" class="has-header">
+    <div>
+      <link rel="â€œiconâ€" type="â€œimage/pngâ€" href="â€œhttps://bit.ly/GoDzPhotoâ€">
+      <img src="https://bit.ly/GoDzPhoto" height="300px" width="300px">
+    </div>
+    <h3 id="goDzCydiHome-heading1" style="color:#4559DD;text-align:center;">Welcome to GoDzCydi</h3>
+    <div id="goDzCydiHome-markdown15" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">Here you will find
+        <strong>ALREADY signed iPAs</strong>! This means you
+        <strong>WON'T need a computer to install these apps</strong>!
+        <strong>NOTE: These apps were provided by Tweakbox.</strong>
+      </p>
+    </div>
+    <div class="spacer" style="width: 300px; height: 29px;"></div>
+    <h2 id="goDzCydiHome-heading2" style="color:#000000;">Editor's choice</h2>
+    <ion-list id="goDzCydiHome-list15">
+      <ion-item class="item-thumbnail-left" id="goDzCydiHome-list-item26" href-inappbrowser="https://itunes.apple.com/us/app/movies-diary/id1331405996">
+        <img src="https://s3.amazonaws.com/ionic-io-static/WtIt9RPwSFSlANsy3zrJ_moviesdiary-logo.jpg">
+        <h2>Movies Diary</h2>
+        <p>Signed</p>
+      </ion-item>
+    </ion-list>
+    <div id="goDzCydiHome-markdown16" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">This app lets you see
+        <strong>all seasons and episodes of popular TV shows</strong>, like "Rick and Morty" and
+        <strong>the latest popular Movies</strong>, like "Avengers: Infinity War" or "Black Panther" etc. Download now!</p>
+    </div>
+  </ion-content>
+</ion-view></script>
+<script id="templates/goDzCydiApps.html" type="text/ng-template">
+<ion-view title="GoDzCydi - Apps" id="page3">
+  <ion-content padding="true" class="has-header">
+    <div id="goDzCydiApps-markdown5" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>++ Apps</strong>
+      </p>
+    </div>
+    <ion-list id="goDzCydiApps-list5">
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item1" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8uXYcrx18iki6m1oNumosLv4YKZlpg,%2Ftitle%2FTwitter%252B%252B">
+        <img src="https://s3.amazonaws.com/ionic-io-static/40CN62KPTrK7FCDznJdA_twitter-logo.jpg">
+        <h2>Twitter++</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item3" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8uXYc3iz8ijh6e1pNKopcbm48dej6em%2Ftitle%2FWhatsapp%252B%252B">
+        <img src="https://s3.amazonaws.com/ionic-io-static/11JNCx6VTAyyet4fgZlt_whatsapp-logo.jpeg">
+        <h2>Whatsapp++</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item4" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8uXYc_p48iliJy1oNumosLv4YKZlpg,%2Ftitle%2FYoutube%252B%252B">
+        <img src="https://s3.amazonaws.com/ionic-io-static/JeENX7KSZibi57ZqsyiC_youtube-logo.jpg">
+        <h2>YouTube++</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item5" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8uXYcnq3ciZjLC1oNumosLv4YKZlpg,%2Ftitle%2FSpotify%252B%252B">
+        <img src="https://s3.amazonaws.com/ionic-io-static/frP2Lmd5Rm2PDQdIbhrb_spotify-logo.jpg">
+        <h2>Spotify++</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item6" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8uXYcnoz8STjpi5pNKopcbm48dej6em%2Ftitle%2FSnapchat%252B%252B">
+        <img src="https://s3.amazonaws.com/ionic-io-static/khm7kPvvRmOs5YbV59tn_snapchat-logo.jpg">
+        <h2>Snapchat++</h2>
+        <p>Signed</p>
+      </ion-item>
+    </ion-list>
+    <div id="goDzCydiApps-markdown8" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>Screen Recorders</strong>
+      </p>
+    </div>
+    <ion-list id="goDzCydiApps-list7">
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item7" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXb18ajjqa6Ys-jkw,,%2Ftitle%2FAirShou">
+        <img src="https://s3.amazonaws.com/ionic-io-static/p5g7subSqeV5JlDf8oFA_airshou-logo.png">
+        <h2>AirShou</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item8" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXf5Lmin5q0psphm8bb%2Ftitle%2FEveryCord">
+        <img src="https://s3.amazonaws.com/ionic-io-static/qH1wf4ySPGBbJdXs0pTS_everycord-logo.jpg">
+        <h2>EveryCord</h2>
+        <p>Signed</p>
+      </ion-item>
+    </ion-list>
+    <div id="goDzCydiApps-markdown10" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>Emulators</strong>
+      </p>
+    </div>
+    <ion-list id="goDzCydiApps-list11">
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item11" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXiz8Sgn5qtncmeYL_qzw,,%2Ftitle%2FHappy%2520Chick">
+        <img src="https://s3.amazonaws.com/ionic-io-static/3Uu2o2SnSLO21TZykx4L_happychick-logo.png">
+        <h2>Happy Chick</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item12" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXh0LVkj6a4Ys-jkw,,%2Ftitle%2FGBA4iOS">
+        <img src="https://s3.amazonaws.com/ionic-io-static/O4DTmNcFQ7i0pTXr50oA_gba4ios-logo.png">
+        <h2>GBA4iOS</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item14" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXh0YiZlapzndaU%2Ftitle%2FGC4iOS">
+        <img src="https://s3.amazonaws.com/ionic-io-static/BCVEujehTUCXd4tTiO0a_gc4ios-logo.png">
+        <h2>GC4iOS</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item15" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXj0sOjVKC1lQ,,%2Ftitle%2FiDos">
+        <img src="https://s3.amazonaws.com/ionic-io-static/v2RzCUUMSqi0nkpIQKuF_idos-logo.png">
+        <h2>iDOS</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item16" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXj3LijVKC1lQ,,%2Ftitle%2FiNDS">
+        <img src="https://s3.amazonaws.com/ionic-io-static/9daDGvfR9Lt7D1OuRXuw_inds-logo.png">
+        <h2>iNDS</h2>
+        <p>Signed</p>
+      </ion-item>
+    </ion-list>
+    <div id="goDzCydiApps-markdown11" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>Jailbreak</strong>
+      </p>
+    </div>
+    <ion-list id="goDzCydiApps-list12">
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item17" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXf2rmTmqmmosuqYL_qzw,,%2Ftitle%2FElectra%2520Jailbreak%2528Newest%2529">
+        <img src="https://s3.amazonaws.com/ionic-io-static/LcuRt9eJQM69pP8WiGJu_electra-logo.png">
+        <h2>Electra</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left item-icon-right" id="goDzCydiApps-list-item18" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXf2rmTmqmmosuqYL_qzw,,%2Ftitle%2FElectra%2520Jailbreak%2528Newest%2529">
+        <img src="https://s3.amazonaws.com/ionic-io-static/FZ4uppKaQyG3d7tv5TZQ_houdini-logo.png">
+        <h2>Houdini</h2>
+        <p>Signed</p>
+        <i class="icon ion-alert-circled"></i>
+      </ion-item>
+    </ion-list>
+    <div id="goDzCydiApps-markdown12" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>Utilities</strong>
+      </p>
+    </div>
+    <ion-list id="goDzCydiApps-list13">
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item20" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXlz7yflauwndKfl8io18SR%2Ftitle%2FKahootKiller">
+        <img src="https://s3.amazonaws.com/ionic-io-static/nYO0u1jqRCCK4zLxETay_kahootkiller-logo.png">
+        <h2>KahootKiller</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item21" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXy0cCVh6WqppScorc,%2Ftitle%2FxCleaner">
+        <img src="https://s3.amazonaws.com/ionic-io-static/ppP6cKX9RPyS8BVOqZxt_xcleaner-logo.jpg">
+        <h2>xCleaner</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left item-icon-right" id="goDzCydiApps-list-item22" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXg18Cqh2WupMc,%2Ftitle%2FFilzaEscaped">
+        <img src="https://s3.amazonaws.com/ionic-io-static/3GoAJGtmS6G9HXLJOVdn_filzaescaped-logo.png">
+        <h2>FilzaEscaped</h2>
+        <p>Signed</p>
+        <i class="icon ion-alert-circled"></i>
+      </ion-item>
+    </ion-list>
+    <div id="goDzCydiApps-markdown13" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>Movies</strong>
+      </p>
+    </div>
+    <ion-list id="goDzCydiApps-list14">
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item23" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXn3cqZi5m0rJScorc,%2Ftitle%2FMovieBox">
+        <img src="https://s3.amazonaws.com/ionic-io-static/RCBkqJa9Romd0cfuBqeU_moviebox-logo.png">
+        <h2>MovieBox</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item24" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4OknZymn8iiqoXn3cqZi5-pYs-jkw,,%2Ftitle%2FMovie%2520HD">
+        <img src="https://s3.amazonaws.com/ionic-io-static/rdffsAEmSt6VBLH1abam_moviehd-logo.png">
+        <h2>MovieHD</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item25" href-inappbrowser="https://itunes.apple.com/us/app/movies-diary/id1331405996">
+        <img src="https://s3.amazonaws.com/ionic-io-static/GjfupNGvTDSBs9K57tzm_moviesdiary-logo.jpg">
+        <h2>Movies Diary</h2>
+        <p>Signed</p>
+      </ion-item>
+    </ion-list>
+    <div id="goDzCydiApps-markdown14" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>Hacked/Modded Games</strong>
+      </p>
+    </div>
+    <ion-list id="goDzCydiApps-list17">
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item28" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4ORlqe4m8egl8mp1bWdi6p0l9KUpb7p1Lech6W4Ys-jkw,,%2Ftitle%2FClash%2520Of%2520Clans%2520Hack">
+        <img src="https://s3.amazonaws.com/ionic-io-static/B9Z2vwFKSZmhtrgRMK9Y_coc-logo.jpg">
+        <h2>COC - Private Server</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item29" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4ORlqe4m8egl8mp1bWdi6p0oMemprrb58Oei5i3qM5hm8bb%2Ftitle%2FLast%2520Day%2520On%2520Earth%2520hack">
+        <img src="https://s3.amazonaws.com/ionic-io-static/yZ35xckwTR26Vuq7zaiX_ldoe-logo.jpg">
+        <h2>Last Day On Earth</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item30" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4ORlqe4m8egl8mp1bWdi6p0p9uVqbfz4cmijJy3p5Scorc,%2Ftitle%2FSubway%2520Surfers%2520Hack">
+        <img src="https://s3.amazonaws.com/ionic-io-static/zZCp1W4hQtKzMUeRG2ps_ss-logo.jpg">
+        <h2>Subway Surfers</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item31" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3sdqVWaqotCiq4Tj3rWTiqV4YtaqYb_qz4ORlqe4m8egl8mp1bWdi6p0bMiUnsLq3cOcVKC1lQ,,%2Ftitle%2F8%2520Ball%2520Pool%2520Hacks">
+        <img src="https://s3.amazonaws.com/ionic-io-static/R2ZQ82C1QAaUOWXE28Dg_8bp-logo.jpg">
+        <h2>8 Ball Pool</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item32" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3o5fVZu0q9Rhqbvb3sReiaayY8ejosmp6LZfVmd4Y5dnYYexnYlnVWymmJ5olYeun7Vih5l5mZdpZIjbp4hpWGWupMc,%2Ftitle%2FTraffic%2520Rider%2520hack">
+        <img src="https://s3.amazonaws.com/ionic-io-static/CBBASgNRIeSRaaHzvcwg_tr-logo.jpg">
+        <h2>Traffic Rider</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item33" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3o5fVZu0q9Rhqbvb3sReiaayY8ejosmp6LZfVmd3Y5hjYYmsnYdoVWymmJ6ZY7rcn7Vih5l5mZdpY4rcz4xhWWWupMc,%2Ftitle%2FThe%2520Sims-Infinite%2520Coins">
+        <img src="https://s3.amazonaws.com/ionic-io-static/m9hqiAd3QYGk6VbGxj6y_thesims-logo.png">
+        <h2>The Sims - Infinite Coins</h2>
+        <p>Signed</p>
+      </ion-item>
+      <ion-item class="item-thumbnail-left" id="goDzCydiApps-list-item34" href-inappbrowser="itms-services://?action=download-manifest&url=https%3A%2F%2Fapi.tweakboxapp.com%2Fdownload%2Fmsru3o5fVZu0q9Rhqbvb3sReiaayY8ejosmp6LZfVmd4Y5llYYaunYVhVWymmMhsaojbn7Vih5l5mZdpZY6tnotjW2WupMc,%2Ftitle%2FEgg%252C%2520Inc.%2520HACK">
+        <img src="https://s3.amazonaws.com/ionic-io-static/0MOh7fayQVqeRLX9Vfk8_egginc-logo.jpg">
+        <h2>Egg, Inc.</h2>
+        <p>Signed</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view></script>
+<script id="templates/goDzCydiCredits.html" type="text/ng-template">
+<ion-view title="GoDzCydi - Credits" id="page4">
+  <ion-content padding="true" class="has-header">
+    <ion-list id="goDzCydiCredits-list6">
+      <ion-item class="item-avatar" id="goDzCydiCredits-list-item2" href-inappbrowser="https://godzm4tt3o.js.org">
+        <img src="https://s3.amazonaws.com/ionic-io-static/rqXphOceRKC3lCe20z5l_photo.jpg">
+        <h2>GoDzM4TT3O</h2>
+        <p>Creator of GoDzCydi</p>
+      </ion-item>
+    </ion-list>
+    <div id="goDzCydiCredits-button-bar1" class="button-bar">
+      <a href-inappbrowser="https://bit.ly/M4TT3OYT" id="goDzCydiCredits-button5" class="button button-positive button-block">YouTube</a>
+      <a href-inappbrowser="https://godzm4tt3o.js.org/infoandcontacts.html" id="goDzCydiCredits-button7" class="button button-positive button-block">Contact me</a>
+    </div>
+    <div id="goDzCydiCredits-markdown6" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>Install my AdBlocker Chrome extension from the Chrome webstore!</strong>
+      </p>
+    </div>
+    <a href-inappbrowser="https://godzm4tt3o.js.org/godzadb.html" id="goDzCydiCredits-button8" class="button button-positive button-block">GoDzADB</a>
+    <div id="goDzCydiCredits-markdown17" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>NOTE:</strong> if you want new apps to be added, please feel free to contact me!</p>
+    </div>
+    <div class="spacer" style="width: 300px; height: 182px;"></div>
+    <div id="goDzCydiCredits-markdown7" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">Copyright
+        <strong>GoDzM4TT3O</strong> -- All rights reserved.</p>
+    </div>
+  </ion-content>
+</ion-view></script>
+<script id="templates/goDzCydi.html" type="text/ng-template">
+<ion-view id="page1">
+  <ion-tabs class="tabs-stable tabs-icon-top" id="goDzCydi-tabs1">
+    <ion-tab title="Home" icon="ion-home" href="#//home" id="goDzCydi-tab1">
+      <ion-nav-view name="tab1"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Apps" icon="ion-android-apps" href="#//apps" id="goDzCydi-tab2">
+      <ion-nav-view name="tab2"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Credits" icon="ion-ios-information-outline" href="#//credits" id="goDzCydi-tab3">
+      <ion-nav-view name="tab3"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+</ion-view></script>
+  </body>
 </html>
