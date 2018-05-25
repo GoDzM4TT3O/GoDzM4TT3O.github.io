@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GoDzM4TT3O's SCRIPTS for OpenTerm</title>
+<body>
+<h1>LIST OF GoDzM4TT3O's SCRIPTS for OpenTerm</h1>
+<hr>
+</hr>
+<div>
+<p>x</p>
+<p>Description</p>
+<textarea readonly>
+x is a program made by GoDzM4TT3O that gets a parameter and then prints it to the user. It also offers TextToSpeech.
+</textarea>
+<p>Script</p>
+<textarea readonly>
+//If no parameters after x, then print usage and exit
+if isEmpty(parameters) {
+	print("Usage: x <value of x>\n")
+	exit()
+}
+
+//If you want to, you can use a variable instead of typing the whole thing
+
+//x = parameters[0]
+
+print("\n\nx = " + parameters[0] + " ")
+//Change parameters[0] to x if you want to use the variable x to shorten it
+
+//Uncomment if you want TTS
+//shell("say x.is.equal.to." + parameters[0])
+
+about = "\n__________\nABOUT\nx is a program made by GoDzM4TT3O that gets a parameter and then prints it to the user. It also offers TextToSpeech. Feel free to visit my website at: https://GoDzM4TT3O.js.org\n__________\n\n\n"
+aboutts = "x.is.a.program.made.by.gozmattèò.that.gets.a.parameter.and.then.printsit.to.the.user....It.also.offers.Text.To.Speech....Feel.free.to.visit.my.website.at.gozmattèò.dot.js.org"
+		print(about)
+//Uncomment if you want TTS for the about section.
+//shell("say " + aboutts)
+	exit()
+</textarea>
+</div>
+<hr>
+</hr>
+<div>
+<p>ct</p>
+<p>Description</p>
+<textarea readonly>
+Crash OpenTerm by GoDzM4TT3O.
+</textarea>
+<p>Script</p>
+<textarea readonly>
+//CrashTerm by GoDzM4TT3O
+ok = 1
+x = 5
+y = x
+if ok == 1 {
+	print("Crashing...")
+	while x == y {
+		print(x-y)
+	}
+} else {
+	exit()
+}
+</textarea>
+</div>
+<hr>
+</hr>
+<div>
+<p>sqrt</p>
+<p>Description</p>
+<textarea readonly>
+Square root of a number by GoDzM4TT3O.
+</textarea>
+<p>Script</p>
+<textarea readonly>
+if isEmpty(parameters) {
+	print("Usage: sqrt <number to square root>\n")
+	exit()
+}
+
+strnum = parameters[0]
+num = parseNumber(strnum)
+sqnum = sqrt(num)
+
+print("\n\nThe Square Root of "+ parameters[0] + " is " + sqnum + " \n\nProgram made by GoDzM4TT3O\n")
+	exit()
+</textarea>
+</div>
+<hr>
+</hr>
+<div>
+<p>cbrt</p>
+<p>Description</p>
+<textarea readonly>
+Cube root of a number by GoDzM4TT3O.
+</textarea>
+<p>Script</p>
+<textarea readonly>
+if isEmpty(parameters) {
+	print("Usage: cbrt <number to cube root>\n")
+	exit()
+}
+
+strnum = parameters[0]
+num = parseNumber(strnum)
+cbnum = cbrt(num)
+
+print("\n\nThe Cube Root of "+ parameters[0] + " is " + cbnum + " \n\nProgram made by GoDzM4TT3O\n")
+	exit()
+</textarea>
+</div>
+<hr>
+</hr>
+</body>
+</head>
+</html>
