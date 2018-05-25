@@ -7,6 +7,15 @@
 <h1>LIST OF GoDzM4TT3O's SCRIPTS for OpenTerm</h1>
 <hr>
 </hr>
+	function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 	<script>
 		autosize(document.getElementById("xd"));
@@ -172,7 +181,11 @@ aboutts = "x.is.a.program.made.by.gozmattèò.that.gets.a.parameter.and.then.pri
 //shell("say " + aboutts)
 	exit()
 </textarea>
-</div>
+	
+<button onclick="copyToClipboard('#xd')">Copy Description</button>
+<button onclick="copyToClipboard('#xs')">Copy Script</button>
+
+	</div>
 <hr>
 </hr>
 <div>
@@ -199,6 +212,10 @@ if ok == 1 {
 </div>
 <hr>
 </hr>
+	
+<button onclick="copyToClipboard('#ctd')">Copy Description</button>
+<button onclick="copyToClipboard('#ctd')">Copy Script</button>
+
 <div>
 <p>sqrt</p>
 <p>Description</p>
@@ -219,6 +236,10 @@ sqnum = sqrt(num)
 print("\n\nThe Square Root of "+ parameters[0] + " is " + sqnum + " \n\nProgram made by GoDzM4TT3O\n")
 	exit()
 </textarea>
+	
+<button onclick="copyToClipboard('#sqrtd')">Copy Description</button>
+<button onclick="copyToClipboard('#sqrts')">Copy Script</button>
+
 </div>
 <hr>
 </hr>
@@ -242,6 +263,10 @@ cbnum = cbrt(num)
 print("\n\nThe Cube Root of "+ parameters[0] + " is " + cbnum + " \n\nProgram made by GoDzM4TT3O\n")
 	exit()
 </textarea>
+	
+<button onclick="copyToClipboard('#cbrtd')">Copy Description</button>
+<button onclick="copyToClipboard('#cbrts')">Copy Script</button>
+
 </div>
 <hr>
 </hr>
