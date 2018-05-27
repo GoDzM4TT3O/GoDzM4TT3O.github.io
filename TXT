@@ -1,4 +1,4 @@
 zb1527443759595 300 IN TXT zmverify.zoho.com
 @ 300 IN TXT "v=spf1 include:zoho.com ~all"
-zoho._domainkey.godzm4tt3o.js.org 300 IN TXT v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDdhGopE6Oa5ERdm7/soH86we9gf2NgTc/GER6lttQu+KgpKN7Q7pDK4b/18Tv4aba4HH0DGz0gF737qBhCDd5RnS/6BT5rLj6TazJscmytagz+LTjGqTSCxLiTqYA0wEHWQGQyvs4z1jNYIqqV756NYfZjOhcfh2WvmgXrbNUGNQIDAQAB
+zoho._domainkey.godzm4tt3o.js.org 300 IN TXT "v=DKIM1; k=rsa; t=y; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCLRVWdSCYzEEjnzmMLkpYJ2CpvdMinQ+Hd5PN1fvwLpnKCeoLNROnUzjJcSjnQTENShMPMvFXdfGrxdrAshgAap+0z20PO8GQyFBMprK0+1f0Ivsa5mfO7PwhQG45ddW65K9w3Cuyo6y4j1cFNAUG7hPwbUZ/jBKmHNnsq/KebWwIDAQAB"
 _dmarc 300 IN TXT "v=DMARC1; p=none; rua=mailto:godz@godzm4tt3o.js.org"
