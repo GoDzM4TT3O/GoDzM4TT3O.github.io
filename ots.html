@@ -37,6 +37,35 @@ textarea {
 min-height: 900px;  
 }
 }
+		textarea#8d{
+	width:100%;
+	box-sizing:border-box;
+	direction:ltr;
+	display:block;
+	max-width:100%;
+	line-height:1.5;
+	padding:15px 15px 30px;
+	border-radius:3px;
+	border:1px solid #F7E98D;
+	transition:box-shadow 0.5s ease;
+	box-shadow:0 4px 6px rgba(0,0,0,0.1);
+	font-smoothing:subpixel-antialiased;
+		}
+		textarea#8s {
+	width:100%;
+	height: 800px;
+	box-sizing:border-box;
+	direction:ltr;
+	display:block;
+	max-width:100%;
+	line-height:1.5;
+	padding:15px 15px 30px;
+	border-radius:3px;
+	border:1px solid #F7E98D;
+	transition:box-shadow 0.5s ease;
+	box-shadow:0 4px 6px rgba(0,0,0,0.1);
+	font-smoothing:subpixel-antialiased;
+}
 		textarea#xd {
 	width:100%;
 	box-sizing:border-box;
@@ -155,6 +184,50 @@ min-height: 900px;
 }
 		
 	</style>
+<div>
+	<h6>NEW!</h6>
+	<p>8ball</p>
+	<p>Description</p>
+	<textarea readonly id="8d">
+	Glorious 8 ball, made by GoDzM4TT3O.
+	</textarea>
+	<p>Script</p>
+	<textarea readonly id="8s">
+	//If there are no parameters, print help message
+if isEmpty(parameters) {
+	print("\nUsage: 8ball <option 1> <option 2>\n\nExample: 8ball pizza hamburger\n\nPrint credits: 8ball cr\n\n")
+	exit()
+}
+//End help
+//Credits
+credits = parameters[0]
+//If user types 8ball cr, print credits
+if credits == "cr" {
+	print("Credits: GoDzM4TT3O\n")
+	exit()
+}
+//End credits
+//First and second parameters
+first = parameters[0]
+second = parameters[1]
+//Choose a number between 1 and 2
+random = randomNumber(0, 2)
+//If the random number is 1, choose and print the first argument, else choose and print the second
+if random == 1 {
+	print("The 8 ball says: " + first + "\n")
+	exit()
+} else {
+	print("The 8 ball says: " + second + "\n")
+	exit()
+}
+//End 8ball
+//Glorious 8 ball by GoDzM4TT3O
+	</textarea>
+	<button onclick="copyToClipboard('#xd')">Copy Description</button>
+<button onclick="copyToClipboard('#xs')">Copy Script</button>
+
+	</div>
+	<hr>
 <div>
 <p>x</p>
 <p>Description</p>
