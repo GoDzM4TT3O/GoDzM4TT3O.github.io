@@ -1,6 +1,6 @@
 /*
 style.css by GoDzM4TT3O
-TODO: improve mobile support
+improved mobile support
 */
 
 * {
@@ -106,13 +106,22 @@ body {
     background-color: #435165;
     border: none;
     color: white;
-    padding: 15px 28%;
+    padding: 15px 30%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 3%;
-    margin-right: 3%;
+    width: 100%;
+}
+
+.adb ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.adb li {
+   border-bottom: 1px solid #C3DBFB;
 }
 
 .cp h4 {
@@ -140,14 +149,23 @@ body {
 }
 
 .index button {
-background-color: #435165;
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin-left: 2.6%;
-margin-right: 1.2%
+    background-color: #435165;
+    border: none;
+    color: white;
+    padding: 15px 30%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+}
+
+.index ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.index li {
+   border-bottom: 1px solid #C3DBFB;
 }
