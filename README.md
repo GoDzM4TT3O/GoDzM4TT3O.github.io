@@ -4,10 +4,10 @@ GoDzM4TT3O's website hosted by GitHub pages. Domain by JS.org
 ## CLONING
 ### Clone the website with git:
 `git clone https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io`
-### Alternatively, you can download the zip file using wget (RELEASE v1.0):
-`wget https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/releases/download/1.0/source.zip`
+### Alternatively, you can download the zip file using wget (RELEASE v1.1):
+`wget https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/releases/download/1.1/source.zip`
 
-(The source.zip file above can also be downloaded from any browser)
+(The source.zip file above can also be downloaded from any browser, simply go to https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/releases/download/1.1/source.zip)
 ***
 ## TODO
 - [x] Make a new redesign
