@@ -15,4 +15,4 @@ GoDzM4TT3O's website hosted by GitHub pages. Domain by JS.org
 - [x] Add favicon support for multiple browsers (favicon sizes: 32x32, 192x192, 196x196)
 ***
 ## CHANGELOG  
-- 27/01/2020: ADD 'contact.html'
+- 27/01/2020: ADD 'contact.html'; UPDATE 'README.md'
