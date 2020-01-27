@@ -7,7 +7,7 @@ GoDzM4TT3O's website hosted by GitHub pages. Domain by JS.org
 ### Alternatively, you can download the zip file using wget (RELEASE v1.1):
 `wget https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/releases/download/1.1/source.zip`
 
-(The source.zip file above can also be downloaded from any browser, simply go to https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/releases/download/1.1/source.zip)
+(The source.zip file above can be downloaded from any browser by [clicking here](https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/releases/download/1.1/source.zip))
 ***
 ## TODO
 - [x] Make a new redesign
