@@ -171,6 +171,6 @@ body {
 
 
 hr {
-   border: 1px dashed #4c566a;
-   color: #435165;
+   border: 1px solid #435165;
+   border-radius: 1px;
 }
