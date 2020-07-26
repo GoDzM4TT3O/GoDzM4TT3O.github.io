@@ -173,4 +173,5 @@ body {
 hr {
    border: 1px solid #435165;
    border-radius: 1px;
+   height: 2px;
 }
