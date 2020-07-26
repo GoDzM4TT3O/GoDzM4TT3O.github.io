@@ -169,6 +169,7 @@ body {
    border-bottom: 1px solid #C3DBFB;
 }
 
-br {
-   line-height: 1px;
+
+hr {
+   border: 1px dashed #4c566a;
 }
