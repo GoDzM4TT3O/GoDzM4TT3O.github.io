@@ -17,27 +17,64 @@
 	<!--END FAVICON-->
 
 </head>
+	
+<style>
+.index button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.index:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.index button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.index button:hover {
+  background-color: #3e8e41;
+}
+</style>
+	
 <body>
-	<div class="index">
+	<div class="index" style="width:100%">
 	<h1>Welcome to GoDzM4TT3O's website!</h1>
+	<button onclick="window.location='about.html'" style="width:50%">About</button>
+	<button onclick="window.location='adblocker.html'" style="width:50%">AdBlocker</button>
+	</div>
+	
+	<br>
+	
+	<div class="index" style="width:100%">
+	<button onclick="window.location='Arch'" style="width:50%">Arch Linux Installation Instructions</button>
+	<button onclick="window.location='contact.html'" style="width:50%">Contact me</button>
+	</div>
 		
-	<ul><li><button onclick="window.location='about.html'">About</button></li>
-	<hr>
-	<li><button onclick="window.location='adblocker.html'">AdBlocker</button></li>
-	<hr>
-	<li><button onclick="window.location='Arch'">Arch Linux Installation Instructions</button></li>
-	<hr>
-        <li><button onclick="window.location='contact.html'">Contact me</button></li>
-        <hr>
-	<li><button onclick="window.location='dotfiles'">Dotfiles</button></li>
-        <hr>
-	<li><button onclick="window.location='download.html'">Download this website</button></li>
-        <hr>
-	<li><button onclick="window.location='https://github.com/GoDzM4TT3O'">GitHub</button></li>
-        <hr>
-	<li><button onclick="window.location='social.html'">Social</button></li></ul>
-       	
+	<br>
+	
+	<div class="index" style="width:100%">
+	<button onclick="window.location='dotfiles'" style="width:50%">Dotfiles</button>
+	<button onclick="window.location='download.html'" style="width:50%">Download this website</button>
+	</div>
+
+	<br>
+	
+	<div class="index" style="width:100%">
+	<button onclick="window.location='https://github.com/GoDzM4TT3O'" style="width:50%">GitHub</button>
+	<button onclick="window.location='social.html'" style="width:50%">Social</button>
         </div>
+	
+	<br>
+	
         <div class="cp">
                 <h4>A website by GoDzM4TT3O</h4>
                 </div>
