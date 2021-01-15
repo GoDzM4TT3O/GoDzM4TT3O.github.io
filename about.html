@@ -1,50 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
-	<meta charset="utf-8">
+	<title>About GoDzM4TT3O</title>
+	<!--Optimize page loading on some devices-->
+	<meta charset="utf-8" />
 	<meta content='width=device-width, initial-scale=1' name='viewport'/>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+	<!--Stylesheet-->
 	<link rel="stylesheet" href="style.css">
-	<title>GoDzM4TT3O's website</title>
-	
-	<!--BEGIN FAVICON-->
-	<!-- For IE 9 and below. ICO should be 32x32 pixels in size -->
-	<!--[if IE]><link rel="shortcut icon" href="https://raw.githubusercontent.com/GoDzM4TT3O/GoDzM4TT3O.github.io/master/favicon32.png"><![endif]-->
-	<!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
-	<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/GoDzM4TT3O/GoDzM4TT3O.github.io/master/favicon.png" sizes=196x196>
-	<!-- Chrome on Android chooses the 192x192 favicon instead of the 196x196 standard favicon. -->
-	<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/GoDzM4TT3O/GoDzM4TT3O.github.io/master/favicon192.png" sizes=192x192>
-	<!--END FAVICON-->
 
 </head>
+
+<style>
+	pre { color: rgb(200, 200, 200); }
+</style>
+
 <body>
-	<div class="index">
 	<h1>About GoDzM4TT3O</h1>
-	<h4>Who is GoDzM4TT3O?</h4>
-	<h5>GoDzM4TT3O is an Italian dude who likes programming, gaming (not so much nowadays), working out, and the English language (I'm better than most people in Italy! - I've got a certification, Cambridge English B2 certificate, which I got when I was 13 years old.)</h5>
-	<h5>I currently am in high school, and I'm looking forward to get a Linux SysAdmin certification. I don't think I'll go to university. </h5>
 
-	<h4>What programming languages do you often use?</h4>
-	<h5>I often use php, mysql, css, javascript (HTML is not a programming language).</h5>
-	<h5>I also often use the terminal.</h5>
+	<p>
+	This page contains some info about GoDzM4TT3O, but do not expect a lot of information. <strong>Mind your own business, CIA glowies!</strong>
+	</p>
 
-	<h4>What OS do you use?</h4>
-	<h5>I use Ubuntu on a Lenovo B50-10 laptop. I also have Arch Linux 32 bit on an older laptop.</h5>
-	<h5>Instead of using GNOME (bloat) I use i3wm, which is a Window Manager (not a Desktop Environment) but it is very light and uses much less RAM than GNOME.
-	<h5>You can find my dotfiles <a href="https://godzm4tt3o.js.org/dotfiles">here.</a></h5>
-		
-	<h4>Has somebody taught you how to code?</h4>
-	<h5>In reality, no. Just like English: over the course of a few years, without specifically looking to learn, nor improve my levels, I've gained quite a lot of knowledge on these two subjects.</h5>
-	<h5>Not because I'm a nerd, but because these things fascinate me, the "magic" of computers that I've always wanted to understand.</h5>
-	<h5>Also, I talked about being really good at speaking English: why does that matter? Well, it matters because, without being able to speak/understand English, I wouldn't be here writing this.</h5>
-	<h5>I speak Italian, English and French. English is a very important language if you want to speak to anyone, honestly. Computer programming also requires quite a bit of English knowledge.</h5>
+	<hr />
 
-	<br>
+	<h4 id="who">Who is GoDzM4TT3O?</a></h4>
+	<pre>
+	I am a man interested in <b>Linux, Programming & System Administration</b>. I'm also a (<i>natty</i> bodybuilder).
+	Generally, I don't like to work with soydevs, especially with their gay languages.
+	I write software in <b>C, and in Bash/POSIX sh</b>. I don't use languages like the following:
 
-	<h4>Go back to the <a href="index.html">home page</a>
-	</div>
-	<div class="cp">
-	<h4>A website by GoDzM4TT3O</h4>
-	</div>
-</body>
+		- Java
+		- JavaScript
+		- Php
+		- Python
+		- Rust
+		- SQL
+		- <i>[Any other language made by trannies]</i>
+
+	I don't use C++ unless <strong>I REALLY</strong> have to, but it's an <i>OK</i> language.
+	</pre>
+
+	<h4 id="what-os">What operating system do you use?</h4>
+	<pre>
+	I use <a href="https://artixlinux.org"><strong>Artix Linux</strong></a> (a variant of <a href="https://archlinux.org">Arch Linux</a>). Instead of using the bloated <a href="https://wiki.archlinux.org/index.php/Systemd">SoystemD</a>, it uses <strong><a href="https://wiki.gentoo.org/wiki/OpenRC">OpenRC</a></strong> as <a href="https://wiki.archlinux.org/index.php/Init">init system</a>.
+
+	Regarding the kernel, I use <a href="https://wiki.archlinux.org/index.php/Security#Kernel_hardening"><b>linux-hardened</b></a> when all I want is security. This uses the default package from Arch's repositories, and has not been customized.
+
+	Also, I use my own build of <a href="https://wiki.archlinux.org/index.php/Linux-ck"><b>linux-ck</b></a>, that does not contain useless things (AMD, nVidia, etc.),
+	and is useful when I want my laptop (ThinkPad T440p) to give me the best performance possible.
+	Of course, I modified this kernel:
+
+		<u>Before modifying it</u> (stock settings, only required modules using modprobed-db), it took around <b>30 minutes</b> to compile and install!
+
+		<u>After modifying it</u> (other unnecessary modules removed, CPU & GPU number lowered to match my system config, same modprobed-db database file),
+		it only takes <b>15 minutes</b> to compile and install! Also, the performance is far better than <b>linux-hardened</b>.
+	</pre>
+
+	<h4 id="kconfig">Great! So, can I have your Kernel config?</h4>
+	<pre>
+	At the time of writing, <b>I have not published it <i>yet</i></b>. However, when I will apply more optimizations,
+	I will publish the <a href="https://wiki.archlinux.org/index.php/PKGBUILD"><b>Arch PKGBUILD</b></a> (and other needed files) on <a href="https://github.com/GoDzM4TT3O"><b>my GitHub profile</b></a>.
+	</pre>
+
+	<h4 id="idea">What do you think about <i>[insert political topic/discussion/celebrity]</i>?</h4>
+	<pre>
+	<b><u>I don't care, nor should you</u></b>
+	</pre>
+
+	<hr />
+
+	<h3><a href="index.html">Go Back</a></h3>
+
+	</body>
 </html>

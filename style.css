@@ -1,182 +1,48 @@
-/*
-style.css by GoDzM4TT3O
-*/
+/* style.css by GoDzM4TT3O */
 
-* {
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-body {
-    background-color: #435165;
-  margin: 0;
+/* Align Paragraphs */
+@media (min-width: 55em) {
+	.sect { display: inline-block; vertical-align: top; }
 }
 
-.navtop {
-  background-color: #2f3947;
-  height: 60px;
-  width: 100%;
-  border: 0;
-}
-.navtop div {
-  display: flex;
-  margin: 0 auto;
-  width: 1000px;
-  height: 100%;
-}
-.navtop div h1, .navtop div a {
-  display: inline-flex;
-  align-items: center;
-}
-.navtop div h1 {
-  flex: 1;
-  font-size: 24px;
-  padding: 0;
-  margin: 0;
-  color: #eaebed;
-  font-weight: normal;
-}
-.navtop div a {
-  padding: 0 20px;
-  text-decoration: none;
-  color: #c1c4c8;
-  font-weight: bold;
-}
-.navtop div a i {
-  padding: 2px 8px 0 0;
-}
-.navtop div a:hover {
-  color: #eaebed;
+.sect { max-width: 275px; }
+html { margin-bottom: 300px ; }
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
-.content {
-  width: 1000px;
-  margin: 0 auto;
-}
-.content h2 {
-  margin: 0;
-  padding: 25px 0;
-  font-size: 22px;
-  border-bottom: 1px solid #e0e0e3;
-  color: #4a536e;
-}
-.content > p, .content > div {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-  margin: 25px 0;
-  padding: 25px;
-  background-color: #fff;
-}
-.content > p table td, .content > div table td {
-  padding: 5px;
-}
-.content > p table td:first-child, .content > div table td:first-child {
-  font-weight: bold;
-  color: #4a536e;
-  padding-right: 15px;
-}
-.content > div p {
-  padding: 5px;
-  margin: 0 0 10px 0;
+/* Dark Mode CSS */
+html, body, :not([style*="background-color:"]) {
+   	background-color: rgb(16, 20, 23) !important;
 }
 
-.adb {
-    width: 50%;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px auto;
-    position: relative;
-}
-.adb h1 {
-    text-align: center;
-    color: #5b6574;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+/* Color headers and links */
+h1:not([style*="color:"]),
+h2:not([style*="color:"]),
+h3:not([style*="color:"]),
+h4:not([style*="color:"]),
+h5:not([style*="color:"]),
+h6:not([style*="color:"]) {
+	color: rgb(247, 142, 102) !important;
 }
 
-.adb h4 {
-  text-align: center;
-  color: #5b6574;
+a:not([style*="color:"]) {
+	color: rgb(128, 182, 204) !important;
 }
 
-.adb button {
-    background-color: #435165;
-    border: none;
-    color: white;
-    padding: 15px 30%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 100%;
+a:not([style*="color:"]):hover {
+	color: rgb(150, 250, 300) !important;
 }
 
-.adb ul {
-   list-style: none;
-   margin: 0;
-   padding: 0;
+a:not([style*="color:"]):active, a:not([style*="color:"]):focus {
+	color: rgb(155, 203, 230) !important;
 }
 
-.adb li {
-   border-bottom: 1px solid #C3DBFB;
-}
-
-.cp h4 {
-    color: #ffffff;
-    text-align: center;
-}
-
-.index {
-    width: 50%;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px auto;
-    position: relative;
-}
-.index h1 {
-    text-align: center;
-    color: #5b6574;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
-}
-.index h4 {
-  text-align: center;
-  color: #5b6574;
-}
-
-.index button {
-    background-color: #435165;
-    border: none;
-    color: white;
-    padding: 15px 30%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 100%;
-}
-
-.index ul {
-   list-style: none;
-   margin: 0;
-   padding: 0;
-}
-
-.index li {
-   border-bottom: 1px solid #C3DBFB;
-}
-
-
-hr {
-   border: 4px solid #435165;
-   border-radius: 4px;
-   display: block;
-   margin-top: 0.5px;
-   margin-bottom: 0.5px;
-   margin-left: auto;
-   margin-right: auto;
-   border-style: inset;
-}
+/* Make text white where needed */
+p, li { color: rgb(200, 200, 200) !important; }

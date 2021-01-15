@@ -1,18 +1,4 @@
 # GoDzM4TT3O.github.io
 GoDzM4TT3O's website hosted by GitHub pages. Domain by JS.org
-***
-## CLONING
-### Clone the website with git:
-`git clone https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io`
-### Alternatively, you can download the zip file using wget (RELEASE v1.1):
-`wget https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/releases/download/1.1/source.zip`
-
-(The source.zip file above can be downloaded from any browser by [clicking here](https://github.com/GoDzM4TT3O/GoDzM4TT3O.github.io/releases/download/1.1/source.zip))
-***
-## TODO
-- [x] Make a new redesign
-- [x] Fix mobile view
-- [x] Add favicon support for multiple browsers (favicon sizes: 32x32, 192x192, 196x196)
-***
-## CHANGELOG  
-- 27/01/2020: ADD 'contact.html'; UPDATE 'README.md'
+Feel free to use this however you like, but make sure you don't 
+use JS, nor excessive CSS.
