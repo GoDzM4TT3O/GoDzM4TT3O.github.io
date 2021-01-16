@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<title>Custom Linux-Ck build</title>
+	<!--Optimize page loading on some devices-->
+	<meta charset="utf-8" />
+	<meta content='width=device-width, initial-scale=1' name='viewport'/>
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+	<!--Stylesheet-->
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<img style="float:right; height:5em" src="pics/linux.svg" alt="Tux, the Linux mascotte" title="Tux, the Linux mascotte">
+
+	<h1>Custom Linux-Ck build</h1>
+
+	<p>
+	I have released the PKGBUILD (& optional patch to apply if cloning from the AUR) for my custom Linux-Ck configuration, check it out!
+	</p>
+
+	<hr />
+
+	<p>
+	You can <a href="https://github.com/GoDzM4TT3O/pkgbuilds/tree/master/linux-ck">open the directory</a>, or you can read more down below.
+	</p>
+
+	<h3 id="what-is-ck">What is Linux-ck? <a href="ck.html#what-is-ck">(#what-is-ck)</a></h3>
+
+	<p>
+
+	<u><em>Linux-ck</em></u>, from what I have understood, is a set of patches made by Con Kolivas (hence <u><em>ck</em></u>) to the
+	Linux Kernel, that should improve overall performance, by using the custom <u><em>MuQSS</em></u> scheduler.
+	Ideally, this kernel is used on Desktop & Laptops, not for servers
+	(however, I can't confirm this statement myself, because I haven't tried running it on one).
+	This kernel provides a low latency environment, as well as great support for 16 CPUs or fewer.
+
+	</p>
+
+	<h6>(Some info taken from the <a href="https://wiki.archlinux.org/index.php/Linux-ck">Arch Wiki</a></h6>
+
+	<h3 id="patches">What patches did you apply? <a href="ck.html#patches">(#patches)</a></h3>
+
+	<p>Here's an excerpt from my <a href="https://github.com/GoDzM4TT3O/pkgbuilds/blob/master/linux-ck/README.md">GitHub's README</a></p>
+
+	<ul>
+		<li>Disabled AMD & nVidia graphic drivers;</li>
+		<li>Disabled NUMA;</li>
+		<li>Disabled everything applel;</li>
+		<li>Disabled everything related to AMD, nVidia, Google, Chinese companies, and other unnecessary shit;</li>
+		<li>Disabled most of other companies' options (like broadcom, mediatek, qualcomm, etc.)</li>
+		<li>Disabled most of the unused sound cards;</li>
+		<li>Lowered CPU count to <code>8</code>, because I only have a CPU with 2C4T (and I could lower it even more to <code>4</code> but I will leave it as-is);</li>
+		<li>Lowered GPU count to <code>2</code>, because no person that I know of has more than 2 GPUs (This includes the iGPU + Discrete GPU);</li>
+		<li>Set Kernel compression to <code>LZ4</code>, and disabled other compressions (performance > size).</li>
+	</ul>
+
+	<p>
+
+	A feature I've borrowed from the original PKGBUILD is the use of <code>modprobed.db</code>,
+	which I have enforced in my patched PKGBUILD. You can see mine <a href="https://github.com/GoDzM4TT3O/pkgbuilds/blob/master/linux-ck/modprobed.db">here</a>.
+
+	</p>
+
+	<h3 id="getting">Getting the patch <a href="ck.html#getting">(#getting)</a></h3>
+
+	<p>Here's what you have to do to install this (instructions for <b>Arch-<em>based</em></b> distros):</p>
+
+	<ol>
+
+		<li>Install <code>base-devel</code> and <code>git</code> (as root):
+			<br>
+			<code style="background-color: #222426;">pacman -S base-devel git</code>
+		</li>
+
+		<br>
+
+		<li>Clone my <code>PKGBUILDs</code> repository:
+			<br>
+			<code style="background-color: #222426;">cd $HOME; git clone https://github.com/GoDzM4TT3O/pkgbuilds && cd pkgbuilds</code>
+		</li>
+
+		<br>
+
+		<li>(Optional) Check if upstream version is more up-to-date than local version (If it is, <a href="contact.html">please let me know!</a>):
+			<br>
+			<code style="background-color: #222426;">curl "https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=linux-ck" | grep pkgver | grep -Eo "([0-9]\.[0-9])+" > /tmp/ck-upstream ; grep -Eo "([0-9]\.[0-9])+" linux-ck/PKGBUILD -m1 > /tmp/ck-local ; diff -q /tmp/ck-{local,upstream}</code>
+		</li>
+
+		<br>
+
+		<li>(Recommended) Modify the PKGBUILD:
+			<code style="background-color: #222426">vim PKGBUILD</code>
+			You have to modify the following values:
+			<ul>
+				<li><code>_subarch</code>: default is <code>23</code> (Haswell)</li>
+				<li>If you use AMD or nVidia, comment/remove the lines starting with <code>scripts/config --disable</code> and that contain options you <b><em>really</em></b> need.
+					<br>
+					<u>Same thing goes for audio & network cards.</u>
+				</li>
+			</ul>
+
+		<br>	
+
+		<li>Build the package:
+			<br>
+			<code style="background-color: #222426">makepkg -Csi</code>
+		</li>
+
+	</ol>
+
+	<hr />
+
+	<footer>
+
+		<h3>
+			<a href="index.html">
+			<img style="height:1em" src="pics/home.svg">
+			Go Back</a>
+		</h3>
+
+	</footer>
+
+	</body>
+</html>
