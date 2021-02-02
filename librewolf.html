@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<title>Custom LibreWolf build</title>
+	<!--Optimize page loading on some devices-->
+	<meta charset="utf-8" />
+	<meta content='width=device-width, initial-scale=1' name='viewport'/>
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+	<!--Stylesheet-->
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<img style="float: right; height:5em" src="pics/librewolf.svg" alt="LibreWolf logo" title="LibreWolf logo">
+
+	<h1>Custom LibreWolf Build</h1>
+
+	<p>
+	I have modified LibreWolf to make Google Meet (and other similar tranny shit) work in LibreWolf.
+	</p>
+
+	<hr />
+
+	<p>
+	You can <a href="https://github.com/GoDzM4TT3O/pkgbuilds/tree/master/librewolf">open the directory</a>, or you can read more down below.
+	</p>
+
+	<h3 id="what-is-lwolf">What is LibreWolf? <a href="librewolf.html#what-is-lwolf">(#what-is-lwolf)</a></h3>
+
+	<p>
+
+	<u><em>LibreWolf</em></u> is a Firefox fork that attempts to remove any privacy concerns, such as FF's telemetry,
+	as well as general Internet security &amp; privacy flaws. It ships with <code>uBlock Origin</code> by default,
+	as well as <a href="https://github.com/arkenfox/user.js">gHacks user.js</code></a>, to harden the security of your browser.
+
+	</p>
+
+	<h3 id="patches">What patches did you apply? <a href="librewolf.html#patches">(#patches)</a></h3>
+
+	<p>Here's an excerpt from my <a href="https://github.com/GoDzM4TT3O/pkgbuilds/blob/master/librewolf/README.md">GitHub's README</a></p>
+
+	<ul>
+		<li>Enable CTRL+C &amp; CTRL+V detection (Disable if not used!!)</li>
+		<li>Enable HTTP(S) pipelining (faster speeds)</li>
+		<li>Enable <code>dom.webaudio.enabled</code> and <code>media.peerconnection.enabled</code>, to fix Google Meet (Disable if not used!!)</li>
+		<li>Enable devtools dark theme</li>
+		<li>Enable webcam (Disable if not used!!)</li>
+		<li>Fixed <code>LDFLAGS</code></li>
+		<li>Only send "scheme+host+port" in the referer, nothing more, nothing less</li>
+		<li>Remove unnecessary search engines (The only 2 search engines left are DDG and Searx):
+			<ul>
+				<li>DuckDuckGo Lite</li>
+				<li>Startpage</li>
+				<li>Jive Search</li>
+				<li>Qwant</li>
+				<li>MetaGer</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h3 id="getting">Getting the build <a href="librewolf.html#getting">(#getting)</a></h3>
+
+	<p>Here's what you have to do to install this (instructions for <b>Arch-<em>based</em></b> distros):</p>
+
+	<ol>
+
+		<li>Install <code>base-devel</code>, <code>git</code> and <code>ccache</code> (as root):
+			<br>
+			<code style="background-color: #222426;">pacman -S base-devel git ccache</code>
+			<br>
+			(<code>ccache</code> speeds up compilation when recompiling often)
+		</li>
+
+		<br>
+
+		<li>Set up <code>/etc/ccache.conf</code>:
+			<code style="background-color: #222426;">vim /etc/ccache.conf</code>
+			<br>
+			It should look like this:
+			<pre style="background-color: #222426">
+# Set max cache size to 15 GB
+max_size = 15.0G
+
+# Preserve cache across GCC rebuilds and
+# introspect GCC changes through GCC wrapper.
+compiler_check = %compiler% -v
+
+# I expect 1.5M files. 300 files per directory.
+cache_dir_levels = 3
+
+# Compress cache
+compression = true
+compression_level = 1
+			</pre>
+
+			Now modify <code>/etc/makepkg.conf</code> to use <code>ccache</code>:
+			<code style="background-color: #222426">vim /etc/makepkg.conf</code>
+			<br>
+			Go down until you find <code>BUILDENV</code>,
+			and make sure you uncomment <code>ccache</code> by removing the <code>!</code>
+			<br>
+			It'll look something like this:
+
+			<pre style="background-color: #222426">
+BUILDENV=(!distcc color ccache check !sign)
+			</pre>
+
+		</li>
+
+		<br>
+
+		<li>Clone my <code>PKGBUILDs</code> repository:
+			<br>
+			<code style="background-color: #222426;">cd $HOME; git clone https://github.com/GoDzM4TT3O/pkgbuilds && cd pkgbuilds</code>
+		</li>
+
+		<br>
+
+		<li>(Optional) Check if upstream version is more up-to-date than local version (If it is, <a href="contact.html">please let me know!</a>):
+			<br>
+			<code style="background-color: #222426;">curl "https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=librewolf" | grep pkgver | grep -Eo "([0-9]\.[0-9])+" > /tmp/lw-upstream ; grep -Eo "([0-9]\.[0-9])+" librewolf/PKGBUILD -m1 > /tmp/lw-local ; diff -q /tmp/lw-{local,upstream}</code>
+		</li>
+
+		<br>
+
+		<li>(Recommended) Modify the PKGBUILD to remove support for Google Meet-related modifications:
+			<ul>
+				<li><code>dom.webaudio.enabled</code>: enables partial WebRTC</li>
+				<li><code>media.peerconnection.enabled</code>: allows you to use WebRTC to talk to other people</li>
+				<li><code>media.navigator.video.enabled</code>: enables webcam support</li>
+			</ul>
+
+			<br>
+
+			Also, if you have a CPU with &gt;2 Cores,
+			you should modify <code>mk_add_options MOZ_MAKE_FLAGS="-j2"</code>,
+			<br>
+			and set <code>-j2</code> to the number of your cores,
+			for example (4 core CPU):
+			<br>
+			<code style="background-color: #222426">mk_add_options MOZ_MAKE_FLAGS="-j4"</code>
+		</li>
+
+		<br>
+
+		<li>Build the package:
+			<br>
+			<code style="background-color: #222426">makepkg -Csi</code>
+		</li>
+
+	</ol>
+
+	Make sure you have ±5 hours, depending on the speed of your computer.
+
+	<br>
+
+	On my ThinkPad T440p, it took around 5/6 hours to compile LibreWolf v85.0.
+
+	<br>
+
+	<b><em>Using <code>ccache</code> will help you a lot to reduce compile times</em></b>!
+
+
+	<hr />
+
+	<footer>
+
+		<h3>
+			<a href="index.html">
+			<img style="height:1em" src="pics/home.svg">
+			Go Back</a>
+		</h3>
+
+	</footer>
+
+	</body>
+</html>
