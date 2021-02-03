@@ -45,7 +45,7 @@ a:not([style*="color:"]):active, a:not([style*="color:"]):focus {
 }
 
 /* Make text white where needed */
-p, li, code { color: #FFFFFF !important; }
+p, li, code, pre { color: #FFFFFF !important; }
 
 /* Scale "code" tag */
-code { font-size: 1.3em;  }
+code { font-size: 1.3em; }
