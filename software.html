@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<title>Software</title>
+	<!--Optimize page loading on some devices-->
+	<meta charset="utf-8" />
+	<meta content='width=device-width, initial-scale=1' name='viewport'/>
+	<meta name="description" content="Matteo Salonia's Software" />
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+	<!--Stylesheet-->
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<img style="float:right; height:5em" src="pics/c.png" alt="The C programming language" title="The C programming language">
+
+	<h1>My Software</h1>
+
+	I have wrote some programs in C. Here's a list down below:
+
+	<ul>
+		<li>
+			<a href="https://github.com/saloniamatteo/csnake">
+				<strong>Csnake</strong>: a snake clone written in C
+			</a>
+		</li>
+
+		<li>
+			<a href="https://github.com/saloniamatteo/quiz">
+				<strong>Quiz</strong>: create a Quiz, and/or take a quiz
+			</a>
+		</li>
+
+		<li>
+			<a href="https://github.com/saloniamatteo/calc">
+				<strong>Calc</strong>: a simple calculator written in C,
+				with support for some special values, bit-shifting,
+				Reverse Polish Notation, etc.
+			</a>
+		</li>
+	</ul>
+
+	<p>
+	All of the projects above use GNU AutoTools for the building process,
+	to increase portability.
+	</p>
+
+	<p>
+	Additionally, I have also written my own C Library, called <b>SMCLIB</b>.
+	At the moment, SMCLib contains the following functions:
+	</p>
+
+	<ul>
+		<li>
+			<b>color(char *str, int colorCount, ...)</b>: color a string.
+
+			Example:
+			<pre>
+			/* Make the string below bold, with a red background */
+			char *myStr = "Hello, World!";
+			myStr = color(myStr, 2, bold, redBg);
+			</pre>
+
+			<b>_free_color(void)</b>: free a colored string (it was malloc'd).
+			If you're using a variable, just <pre>free()</pre> that instead,
+			otherwise use the function above.
+		</li>
+	</ul>
+
+	Another feature of this Library is detection of which compiler was used to compile
+	the program, and which platform was used to compile/which architecture was targeted.
+
+	To access the compiler info, look into the contents of <pre>CC</pre>.
+	Similarly, for the architecture info, look into the contents of <pre>ARCH</pre>.
+
+	<hr />
+
+	<footer>
+
+		<h3>
+			<a href="index.html">
+			<img style="height:1em" src="pics/home.svg">
+			Go Back</a>
+		</h3>
+
+	</footer>
+
+	</body>
+</html>
