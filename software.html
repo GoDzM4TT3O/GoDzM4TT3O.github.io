@@ -60,11 +60,13 @@
 
 			Example:
 			<pre>
-			/* Make the string below bold, with a red background */
-			char *myStr = "Hello, World!";
-			myStr = color(myStr, 2, bold, redBg);
+/* Make the string below bold, with a red background */
+char *myStr = "Hello, World!";
+myStr = color(myStr, 2, bold, redBg);
 			</pre>
+		</li>
 
+		<li>
 			<b>_free_color(void)</b>: free a colored string (it was malloc'd).
 			If you're using a variable, just <pre>free()</pre> that instead,
 			otherwise use the function above.
