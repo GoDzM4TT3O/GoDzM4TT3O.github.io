@@ -68,16 +68,21 @@ myStr = color(myStr, 2, bold, redBg);
 
 		<li>
 			<b>_free_color(void)</b>: free a colored string (it was malloc'd).
-			If you're using a variable, just <pre>free()</pre> that instead,
+
+			If you're using a variable, just <em>free()</em> that instead,
 			otherwise use the function above.
 		</li>
 	</ul>
 
+	<p>
 	Another feature of this Library is detection of which compiler was used to compile
 	the program, and which platform was used to compile/which architecture was targeted.
+	</p>
 
-	To access the compiler info, look into the contents of <pre>CC</pre>.
-	Similarly, for the architecture info, look into the contents of <pre>ARCH</pre>.
+	<p>
+	To access the compiler info, look into the contents of <em>CC</em>.
+	Similarly, for the architecture info, look into the contents of <em>ARCH</em>.
+	</p>
 
 	<hr />
 
