@@ -61,28 +61,9 @@
 	<br /><br />
 
 	Additionally, I have also written my own C Library, called <b>SMCLIB</b>.
-	At the moment, SMCLib contains the following functions:
+	To see more about this library, such as which functions are included, check
+	<a href="https://github.com/saloniamatteo/smclib">the GitHub page</a>.
 	</p>
-
-	<ul>
-		<li>
-			<b>color(char *str, int colorCount, ...)</b>: color a string.
-
-			Example:
-			<pre>
-/* Make the string below bold, with a red background */
-char *myStr = "Hello, World!";
-myStr = color(myStr, 2, bold, redBg);
-			</pre>
-		</li>
-
-		<li>
-			<b>_free_color(void)</b>: free a colored string (it was malloc'd).
-
-			If you're using a variable, just <b><i>free()</i></b> that instead,
-			otherwise use the function above.
-		</li>
-	</ul>
 
 	<p>
 	Another feature of this Library is detection of which compiler was used to compile
